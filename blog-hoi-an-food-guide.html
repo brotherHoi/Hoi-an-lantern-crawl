@@ -902,31 +902,48 @@
     .contact-grid{ grid-template-columns:1fr; }
   }
 
-  /* ---------- LANGUAGE TOGGLE ---------- */
-  .lang-btn{
+  /* ---------- LANGUAGE SWITCH (flags) ---------- */
+  .lang-switch{
     margin-left:auto;
-    background:transparent;
-    border:1px solid rgba(245,239,227,0.3);
-    color:var(--paper);
-    font-family:'Be Vietnam Pro', sans-serif;
-    font-weight:700;
-    font-size:12px;
-    letter-spacing:0.04em;
-    padding:8px 12px;
-    border-radius:999px;
-    cursor:pointer;
-    transition:border-color 0.15s ease, color 0.15s ease;
+    display:flex;
+    align-items:center;
+    gap:6px;
   }
 
-  .lang-btn:hover{
+  .lang-flag{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:3px;
+    background:transparent;
+    border:1px solid transparent;
+    border-radius:7px;
+    cursor:pointer;
+    line-height:0;
+    opacity:0.45;
+    transition:opacity 0.15s ease, border-color 0.15s ease;
+  }
+
+  .lang-flag svg{
+    display:block;
+    width:24px;
+    height:16px;
+    border-radius:3px;
+  }
+
+  .lang-flag:hover{ opacity:0.8; }
+
+  .lang-flag.active{
+    opacity:1;
     border-color:var(--lantern);
-    color:var(--lantern);
   }
 
   .navbar-cta{ margin-left:14px; }
 
   @media (max-width:520px){
-    .lang-btn{ padding:8px 10px; }
+    .lang-switch{ gap:3px; }
+    .lang-flag{ padding:2px; }
+    .lang-flag svg{ width:20px; height:13px; }
   }
 
   /* ---------- NAV LINKS (multi-page) ---------- */
@@ -1756,16 +1773,16 @@
     <div class="navbar-name">Sidequest Hội An<span>The Lantern Crawl</span></div>
   </a>
   <nav class="navbar-links">
-    <a href="index.html" data-en="Home" data-vi="Trang chủ" class="">Home</a>
-    <a href="video.html" data-en="Video" data-vi="Video" class="">Video</a>
-    <a href="blog.html" data-en="Blog" data-vi="Blog" class="active">Blog</a>
-    <a href="gallery.html" data-en="Gallery" data-vi="Gallery" class="">Gallery</a>
-    <a href="index.html#tour-khac" data-en="Other Tours" data-vi="Tour khác">Other Tours</a>
-    <a href="index.html#lien-he" data-en="Contact" data-vi="Liên hệ">Contact</a>
+    <a href="index.html" data-en="Home" data-fr="Accueil" data-vi="Trang chủ" class="">Home</a>
+    <a href="video.html" data-en="Video" data-fr="Vidéo" data-vi="Video" class="">Video</a>
+    <a href="blog.html" data-en="Blog" data-fr="Blog" data-vi="Blog" class="active">Blog</a>
+    <a href="gallery.html" data-en="Gallery" data-fr="Galerie" data-vi="Gallery" class="">Gallery</a>
+    <a href="index.html#tour-khac" data-en="Other Tours" data-fr="Autres tours" data-vi="Tour khác">Other Tours</a>
+    <a href="index.html#lien-he" data-en="Contact" data-fr="Contact" data-vi="Liên hệ">Contact</a>
   </nav>
-  <button class="lang-btn" id="langToggle" type="button">VI</button>
+  <div class="lang-switch" id="langSwitch"><button class="lang-flag" type="button" data-lang="en" title="English" aria-label="English"><svg viewBox="0 0 60 40" aria-hidden="true"><rect width="60" height="40" fill="#012169"/><path d="M0,0 60,40 M60,0 0,40" stroke="#ffffff" stroke-width="8"/><path d="M0,0 60,40 M60,0 0,40" stroke="#C8102E" stroke-width="4"/><path d="M30,0 V40 M0,20 H60" stroke="#ffffff" stroke-width="13"/><path d="M30,0 V40 M0,20 H60" stroke="#C8102E" stroke-width="8"/></svg></button><button class="lang-flag" type="button" data-lang="vi" title="Tiếng Việt" aria-label="Tiếng Việt"><svg viewBox="0 0 60 40" aria-hidden="true"><rect width="60" height="40" fill="#DA251D"/><path d="M30,9 L32.59,16.44 L40.46,16.6 L34.18,21.36 L36.47,28.9 L30,24.4 L23.53,28.9 L25.82,21.36 L19.54,16.6 L27.41,16.44 Z" fill="#FFFF00"/></svg></button><button class="lang-flag" type="button" data-lang="fr" title="Français" aria-label="Français"><svg viewBox="0 0 60 40" aria-hidden="true"><rect width="20" height="40" fill="#002395"/><rect x="20" width="20" height="40" fill="#F5F5F5"/><rect x="40" width="20" height="40" fill="#ED2939"/></svg></button></div>
   <a class="navbar-phone" href="tel:+84862627133">📞 +84 862 627 133</a>
-  <a class="navbar-cta" href="index.html#dat-tour"><span data-en="📱 Book the Night" data-vi="📱 Đặt tour đêm nay">📱 Book the Night</span></a>
+  <a class="navbar-cta" href="index.html#dat-tour"><span data-en="📱 Book the Night" data-fr="📱 Réserver la soirée" data-vi="📱 Đặt tour đêm nay">📱 Book the Night</span></a>
 </div>
 
 
@@ -1839,31 +1856,42 @@
 
 <footer>
   <div class="wrap">
-    <span data-en="Hội An By Night — a walking &amp; buggy pub crawl through Hội An after dark" data-vi="Hội An By Night — tour pub crawl đi bộ &amp; xe điện khắp Hội An về đêm">Hội An By Night — a walking &amp; buggy pub crawl through Hội An after dark</span>
-    <span class="footer-claim" data-en="Hội An's first pub crawl tour. The one and only." data-vi="Tour pub crawl đầu tiên tại Hội An. Độc nhất vô nhị.">Hội An's first pub crawl tour. The one and only.</span>
+    <span data-en="Hội An By Night — a walking &amp; buggy pub crawl through Hội An after dark" data-fr="Hội An By Night — une tournée des bars à pied &amp; en voiturette à travers Hội An après la tombée de la nuit" data-vi="Hội An By Night — tour pub crawl đi bộ &amp; xe điện khắp Hội An về đêm">Hội An By Night — a walking &amp; buggy pub crawl through Hội An after dark</span>
+    <span class="footer-claim" data-en="Hội An's first pub crawl tour. The one and only." data-fr="Le tout premier pub crawl de Hội An. L'unique, le vrai." data-vi="Tour pub crawl đầu tiên tại Hội An. Độc nhất vô nhị.">Hội An's first pub crawl tour. The one and only.</span>
     <span class="footer-email"><a href="mailto:hoiansidequest@gmail.com">hoiansidequest@gmail.com</a></span>
   </div>
 </footer>
 
 <script>
 (function(){
-  var current = 'en';
-  var toggle = document.getElementById('langToggle');
+  var LANGS = ['en','vi','fr'];
+  var buttons = document.querySelectorAll('#langSwitch .lang-flag');
 
   function applyLang(lang){
+    if (LANGS.indexOf(lang) === -1) lang = 'en';
     document.querySelectorAll('[data-en]').forEach(function(el){
-      el.textContent = el.getAttribute('data-' + lang);
+      var v = el.getAttribute('data-' + lang);
+      if (v !== null) el.textContent = v;
+    });
+    document.querySelectorAll('[data-en-ph]').forEach(function(el){
+      var v = el.getAttribute('data-' + lang + '-ph');
+      if (v !== null) el.setAttribute('placeholder', v);
     });
     document.documentElement.lang = lang;
-    toggle.textContent = (lang === 'en') ? 'VI' : 'EN';
-    current = lang;
+    buttons.forEach(function(b){
+      b.classList.toggle('active', b.getAttribute('data-lang') === lang);
+    });
+    try { localStorage.setItem('sq-lang', lang); } catch(e){}
+    if (window.renderDateChips) window.renderDateChips(lang);
   }
 
-  toggle.addEventListener('click', function(){
-    applyLang(current === 'en' ? 'vi' : 'en');
+  buttons.forEach(function(b){
+    b.addEventListener('click', function(){ applyLang(b.getAttribute('data-lang')); });
   });
 
-  applyLang('en');
+  var saved = null;
+  try { saved = localStorage.getItem('sq-lang'); } catch(e){}
+  applyLang(saved || 'en');
 })();
 </script>
 

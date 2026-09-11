@@ -902,31 +902,48 @@
     .contact-grid{ grid-template-columns:1fr; }
   }
 
-  /* ---------- LANGUAGE TOGGLE ---------- */
-  .lang-btn{
+  /* ---------- LANGUAGE SWITCH (flags) ---------- */
+  .lang-switch{
     margin-left:auto;
-    background:transparent;
-    border:1px solid rgba(245,239,227,0.3);
-    color:var(--paper);
-    font-family:'Be Vietnam Pro', sans-serif;
-    font-weight:700;
-    font-size:12px;
-    letter-spacing:0.04em;
-    padding:8px 12px;
-    border-radius:999px;
-    cursor:pointer;
-    transition:border-color 0.15s ease, color 0.15s ease;
+    display:flex;
+    align-items:center;
+    gap:6px;
   }
 
-  .lang-btn:hover{
+  .lang-flag{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:3px;
+    background:transparent;
+    border:1px solid transparent;
+    border-radius:7px;
+    cursor:pointer;
+    line-height:0;
+    opacity:0.45;
+    transition:opacity 0.15s ease, border-color 0.15s ease;
+  }
+
+  .lang-flag svg{
+    display:block;
+    width:24px;
+    height:16px;
+    border-radius:3px;
+  }
+
+  .lang-flag:hover{ opacity:0.8; }
+
+  .lang-flag.active{
+    opacity:1;
     border-color:var(--lantern);
-    color:var(--lantern);
   }
 
   .navbar-cta{ margin-left:14px; }
 
   @media (max-width:520px){
-    .lang-btn{ padding:8px 10px; }
+    .lang-switch{ gap:3px; }
+    .lang-flag{ padding:2px; }
+    .lang-flag svg{ width:20px; height:13px; }
   }
 
   /* ---------- NAV LINKS (multi-page) ---------- */
@@ -1639,24 +1656,24 @@
     <div class="navbar-name">Sidequest Hội An<span>The Lantern Crawl</span></div>
   </a>
   <nav class="navbar-links">
-    <a href="index.html" data-en="Home" data-vi="Trang chủ" class="">Home</a>
-    <a href="video.html" data-en="Video" data-vi="Video" class="">Video</a>
-    <a href="blog.html" data-en="Blog" data-vi="Blog" class="">Blog</a>
-    <a href="gallery.html" data-en="Gallery" data-vi="Gallery" class="">Gallery</a>
-    <a href="index.html#tour-khac" data-en="Other Tours" data-vi="Tour khác">Other Tours</a>
-    <a href="index.html#lien-he" data-en="Contact" data-vi="Liên hệ">Contact</a>
+    <a href="index.html" data-en="Home" data-fr="Accueil" data-vi="Trang chủ" class="">Home</a>
+    <a href="video.html" data-en="Video" data-fr="Vidéo" data-vi="Video" class="">Video</a>
+    <a href="blog.html" data-en="Blog" data-fr="Blog" data-vi="Blog" class="">Blog</a>
+    <a href="gallery.html" data-en="Gallery" data-fr="Galerie" data-vi="Gallery" class="">Gallery</a>
+    <a href="index.html#tour-khac" data-en="Other Tours" data-fr="Autres tours" data-vi="Tour khác">Other Tours</a>
+    <a href="index.html#lien-he" data-en="Contact" data-fr="Contact" data-vi="Liên hệ">Contact</a>
   </nav>
-  <button class="lang-btn" id="langToggle" type="button">VI</button>
+  <div class="lang-switch" id="langSwitch"><button class="lang-flag" type="button" data-lang="en" title="English" aria-label="English"><svg viewBox="0 0 60 40" aria-hidden="true"><rect width="60" height="40" fill="#012169"/><path d="M0,0 60,40 M60,0 0,40" stroke="#ffffff" stroke-width="8"/><path d="M0,0 60,40 M60,0 0,40" stroke="#C8102E" stroke-width="4"/><path d="M30,0 V40 M0,20 H60" stroke="#ffffff" stroke-width="13"/><path d="M30,0 V40 M0,20 H60" stroke="#C8102E" stroke-width="8"/></svg></button><button class="lang-flag" type="button" data-lang="vi" title="Tiếng Việt" aria-label="Tiếng Việt"><svg viewBox="0 0 60 40" aria-hidden="true"><rect width="60" height="40" fill="#DA251D"/><path d="M30,9 L32.59,16.44 L40.46,16.6 L34.18,21.36 L36.47,28.9 L30,24.4 L23.53,28.9 L25.82,21.36 L19.54,16.6 L27.41,16.44 Z" fill="#FFFF00"/></svg></button><button class="lang-flag" type="button" data-lang="fr" title="Français" aria-label="Français"><svg viewBox="0 0 60 40" aria-hidden="true"><rect width="20" height="40" fill="#002395"/><rect x="20" width="20" height="40" fill="#F5F5F5"/><rect x="40" width="20" height="40" fill="#ED2939"/></svg></button></div>
   <a class="navbar-phone" href="tel:+84862627133">📞 +84 862 627 133</a>
-  <a class="navbar-cta" href="index.html#dat-tour"><span data-en="📱 Book the Night" data-vi="📱 Đặt tour đêm nay">📱 Book the Night</span></a>
+  <a class="navbar-cta" href="index.html#dat-tour"><span data-en="📱 Book the Night" data-fr="📱 Réserver la soirée" data-vi="📱 Đặt tour đêm nay">📱 Book the Night</span></a>
 </div>
 
 
 <section>
   <div class="wrap page-head">
-    <div class="kicker" data-en="Mỹ Sơn / Bà Nà Hills" data-vi="Mỹ Sơn / Bà Nà">Mỹ Sơn / Bà Nà Hills</div>
-    <h1 data-en="Ancient Ruins or Mountain Fantasy" data-vi="Phế Tích Cổ Xưa hay Xứ Sở Trên Mây">Ancient Ruins or Mountain Fantasy</h1>
-    <p data-en="Two very different day trips out of Hội An — one thousand years old, one built for wonder." data-vi="Hai chuyến đi trong ngày rất khác nhau từ Hội An — một nơi ngàn năm tuổi, một nơi được tạo nên để ngỡ ngàng.">Two very different day trips out of Hội An — one thousand years old, one built for wonder.</p>
+    <div class="kicker" data-en="Mỹ Sơn / Bà Nà Hills" data-fr="Mỹ Sơn / Bà Nà Hills" data-vi="Mỹ Sơn / Bà Nà">Mỹ Sơn / Bà Nà Hills</div>
+    <h1 data-en="Ancient Ruins or Mountain Fantasy" data-fr="Ruines antiques ou féerie de montagne" data-vi="Phế Tích Cổ Xưa hay Xứ Sở Trên Mây">Ancient Ruins or Mountain Fantasy</h1>
+    <p data-en="Two very different day trips out of Hội An — one thousand years old, one built for wonder." data-fr="Deux excursions très différentes au départ de Hội An — l'une millénaire, l'autre bâtie pour émerveiller." data-vi="Hai chuyến đi trong ngày rất khác nhau từ Hội An — một nơi ngàn năm tuổi, một nơi được tạo nên để ngỡ ngàng.">Two very different day trips out of Hội An — one thousand years old, one built for wonder.</p>
   </div>
 </section>
 
@@ -1664,8 +1681,8 @@
   <div class="wrap">
     <div class="price-card coming-soon-card" style="grid-template-columns:1fr;">
       <div>
-        <div class="coming-soon-badge" data-en="Coming Soon" data-vi="Sắp cập nhật">Coming Soon</div>
-        <p class="coming-soon-note" data-en="Price, schedule and pickup details are being finalized — message us for the latest details." data-vi="Giá, lịch trình và điểm đón đang được hoàn thiện — nhắn tụi mình để biết thông tin mới nhất.">Price, schedule and pickup details are being finalized — message us for the latest details.</p>
+        <div class="coming-soon-badge" data-en="Coming Soon" data-fr="Bientôt disponible" data-vi="Sắp cập nhật">Coming Soon</div>
+        <p class="coming-soon-note" data-en="Price, schedule and pickup details are being finalized — message us for the latest details." data-fr="Tarif, horaires et détails de prise en charge sont en cours de finalisation — écrivez-nous pour les dernières informations." data-vi="Giá, lịch trình và điểm đón đang được hoàn thiện — nhắn tụi mình để biết thông tin mới nhất.">Price, schedule and pickup details are being finalized — message us for the latest details.</p>
       </div>
     </div>
   </div>
@@ -1674,8 +1691,8 @@
 <section>
   <div class="wrap">
     <div class="section-head">
-      <div class="kicker" data-en="Option One" data-vi="Lựa Chọn Một">Option One</div>
-      <h2 data-en="Mỹ Sơn Sanctuary" data-vi="Thánh Địa Mỹ Sơn">Mỹ Sơn Sanctuary</h2>
+      <div class="kicker" data-en="Option One" data-fr="Option une" data-vi="Lựa Chọn Một">Option One</div>
+      <h2 data-en="Mỹ Sơn Sanctuary" data-fr="Le sanctuaire de Mỹ Sơn" data-vi="Thánh Địa Mỹ Sơn">Mỹ Sơn Sanctuary</h2>
     </div>
 
     <div class="place-photos">
@@ -1684,11 +1701,11 @@
     </div>
 
     <div class="place-text">
-      <p data-en="About an hour inland from Hội An, hidden in a valley ringed by mountains, sits what's left of a civilization most travellers have never heard of. Mỹ Sơn was the religious and political heart of the Champa Kingdom — a seafaring people who ruled central Vietnam's coast for over a thousand years." data-vi="Cách Hội An khoảng một giờ đi vào đất liền, nằm ẩn trong thung lũng được bao quanh bởi núi non, là những gì còn lại của một nền văn minh mà phần lớn du khách chưa từng nghe tới. Mỹ Sơn từng là trung tâm tôn giáo và chính trị của Vương quốc Chăm Pa — một dân tộc đi biển từng cai trị dải bờ biển miền Trung Việt Nam suốt hơn một nghìn năm.">About an hour inland from Hội An, hidden in a valley ringed by mountains, sits what's left of a civilization most travellers have never heard of. Mỹ Sơn was the religious and political heart of the Champa Kingdom — a seafaring people who ruled central Vietnam's coast for over a thousand years.</p>
+      <p data-en="About an hour inland from Hội An, hidden in a valley ringed by mountains, sits what's left of a civilization most travellers have never heard of. Mỹ Sơn was the religious and political heart of the Champa Kingdom — a seafaring people who ruled central Vietnam's coast for over a thousand years." data-fr="À environ une heure à l'intérieur des terres depuis Hội An, caché dans une vallée cernée de montagnes, se dresse ce qu'il reste d'une civilisation dont la plupart des voyageurs n'ont jamais entendu parler. Mỹ Sơn était le cœur religieux et politique du royaume de Champa — un peuple de marins qui a régné sur la côte du Vietnam central pendant plus de mille ans." data-vi="Cách Hội An khoảng một giờ đi vào đất liền, nằm ẩn trong thung lũng được bao quanh bởi núi non, là những gì còn lại của một nền văn minh mà phần lớn du khách chưa từng nghe tới. Mỹ Sơn từng là trung tâm tôn giáo và chính trị của Vương quốc Chăm Pa — một dân tộc đi biển từng cai trị dải bờ biển miền Trung Việt Nam suốt hơn một nghìn năm.">About an hour inland from Hội An, hidden in a valley ringed by mountains, sits what's left of a civilization most travellers have never heard of. Mỹ Sơn was the religious and political heart of the Champa Kingdom — a seafaring people who ruled central Vietnam's coast for over a thousand years.</p>
 
-      <p data-en="The first temple went up in the 4th century, dedicated to Shiva. For the next thousand years Champa kings kept adding to the site — over 70 structures, each generation building in the style of its own era, coming here to perform the rites that confirmed their right to rule." data-vi="Ngôi đền đầu tiên được dựng vào thế kỷ thứ 4, thờ thần Shiva. Suốt một nghìn năm tiếp theo, các đời vua Chăm liên tục mở rộng khu đền — hơn 70 công trình, mỗi thế hệ xây theo phong cách của thời đại mình, và đến đây thực hiện nghi lễ khẳng định quyền cai trị thiêng liêng.">The first temple went up in the 4th century, dedicated to Shiva. For the next thousand years Champa kings kept adding to the site — over 70 structures, each generation building in the style of its own era, coming here to perform the rites that confirmed their right to rule.</p>
+      <p data-en="The first temple went up in the 4th century, dedicated to Shiva. For the next thousand years Champa kings kept adding to the site — over 70 structures, each generation building in the style of its own era, coming here to perform the rites that confirmed their right to rule." data-fr="Le premier temple fut érigé au IVe siècle, dédié à Shiva. Pendant les mille années qui suivirent, les rois cham n'ont cessé d'agrandir le site — plus de 70 édifices, chaque génération bâtissant dans le style de son époque et venant y accomplir les rites qui confirmaient leur droit de régner." data-vi="Ngôi đền đầu tiên được dựng vào thế kỷ thứ 4, thờ thần Shiva. Suốt một nghìn năm tiếp theo, các đời vua Chăm liên tục mở rộng khu đền — hơn 70 công trình, mỗi thế hệ xây theo phong cách của thời đại mình, và đến đây thực hiện nghi lễ khẳng định quyền cai trị thiêng liêng.">The first temple went up in the 4th century, dedicated to Shiva. For the next thousand years Champa kings kept adding to the site — over 70 structures, each generation building in the style of its own era, coming here to perform the rites that confirmed their right to rule.</p>
 
-      <p data-en="What makes people stop and stare is the brickwork. The Cham stacked fired bricks with no mortar between them — no cement, no visible joins — and the walls are still standing sixteen centuries later. Nobody has fully worked out how. UNESCO listed it in 1999, calling the monuments unique and without equal in Southeast Asia." data-vi="Điều khiến người ta phải dừng lại ngắm nhìn chính là kỹ thuật xây gạch. Người Chăm xếp gạch nung mà không dùng vữa — không xi măng, không mạch nối lộ ra — vậy mà tường vẫn đứng vững sau mười sáu thế kỷ. Đến nay vẫn chưa ai lý giải được. UNESCO công nhận di sản năm 1999, đánh giá các công trình là độc nhất vô nhị ở Đông Nam Á.">What makes people stop and stare is the brickwork. The Cham stacked fired bricks with no mortar between them — no cement, no visible joins — and the walls are still standing sixteen centuries later. Nobody has fully worked out how. UNESCO listed it in 1999, calling the monuments unique and without equal in Southeast Asia.</p>
+      <p data-en="What makes people stop and stare is the brickwork. The Cham stacked fired bricks with no mortar between them — no cement, no visible joins — and the walls are still standing sixteen centuries later. Nobody has fully worked out how. UNESCO listed it in 1999, calling the monuments unique and without equal in Southeast Asia." data-fr="Ce qui laisse les visiteurs bouche bée, c'est la maçonnerie. Les Cham empilaient des briques cuites sans le moindre mortier — ni ciment, ni joint visible — et les murs tiennent toujours debout seize siècles plus tard. Personne n'a encore percé leur secret. L'UNESCO a classé le site en 1999, qualifiant ces monuments d'uniques et sans équivalent en Asie du Sud-Est." data-vi="Điều khiến người ta phải dừng lại ngắm nhìn chính là kỹ thuật xây gạch. Người Chăm xếp gạch nung mà không dùng vữa — không xi măng, không mạch nối lộ ra — vậy mà tường vẫn đứng vững sau mười sáu thế kỷ. Đến nay vẫn chưa ai lý giải được. UNESCO công nhận di sản năm 1999, đánh giá các công trình là độc nhất vô nhị ở Đông Nam Á.">What makes people stop and stare is the brickwork. The Cham stacked fired bricks with no mortar between them — no cement, no visible joins — and the walls are still standing sixteen centuries later. Nobody has fully worked out how. UNESCO listed it in 1999, calling the monuments unique and without equal in Southeast Asia.</p>
     </div>
   </div>
 </section>
@@ -1696,8 +1713,8 @@
 <section>
   <div class="wrap">
     <div class="section-head">
-      <div class="kicker" data-en="Option Two" data-vi="Lựa Chọn Hai">Option Two</div>
-      <h2 data-en="Bà Nà Hills" data-vi="Bà Nà Hills">Bà Nà Hills</h2>
+      <div class="kicker" data-en="Option Two" data-fr="Option deux" data-vi="Lựa Chọn Hai">Option Two</div>
+      <h2 data-en="Bà Nà Hills" data-fr="Bà Nà Hills" data-vi="Bà Nà Hills">Bà Nà Hills</h2>
     </div>
 
     <div class="place-photos">
@@ -1707,15 +1724,15 @@
     </div>
 
     <div class="place-text">
-      <p data-en="Bà Nà Hills is the complete opposite of Mỹ Sơn, and that's the point. Where one is ancient and quiet, this is theatrical and built for wonder. It sits at 1,487 metres in the forest about 45 minutes from Đà Nẵng, named by the French after the banana trees they found when they came up looking for cool mountain air." data-vi="Bà Nà Hills hoàn toàn trái ngược với Mỹ Sơn, và đó chính là điểm thú vị. Một nơi cổ kính tĩnh lặng, còn nơi này thì hoành tráng và được tạo nên để khiến người ta ngỡ ngàng. Bà Nà nằm ở độ cao 1.487 mét giữa rừng, cách Đà Nẵng khoảng 45 phút, được người Pháp đặt tên theo những cây chuối họ tìm thấy khi lên đây tìm không khí mát lành.">Bà Nà Hills is the complete opposite of Mỹ Sơn, and that's the point. Where one is ancient and quiet, this is theatrical and built for wonder. It sits at 1,487 metres in the forest about 45 minutes from Đà Nẵng, named by the French after the banana trees they found when they came up looking for cool mountain air.</p>
+      <p data-en="Bà Nà Hills is the complete opposite of Mỹ Sơn, and that's the point. Where one is ancient and quiet, this is theatrical and built for wonder. It sits at 1,487 metres in the forest about 45 minutes from Đà Nẵng, named by the French after the banana trees they found when they came up looking for cool mountain air." data-fr="Bà Nà Hills est tout le contraire de Mỹ Sơn, et c'est bien là l'intérêt. Là où l'un est ancien et silencieux, l'autre est spectaculaire et pensé pour émerveiller. Le site culmine à 1 487 mètres au milieu de la forêt, à environ 45 minutes de Đà Nẵng, et doit son nom aux bananiers que les Français y trouvèrent en venant chercher l'air frais de la montagne." data-vi="Bà Nà Hills hoàn toàn trái ngược với Mỹ Sơn, và đó chính là điểm thú vị. Một nơi cổ kính tĩnh lặng, còn nơi này thì hoành tráng và được tạo nên để khiến người ta ngỡ ngàng. Bà Nà nằm ở độ cao 1.487 mét giữa rừng, cách Đà Nẵng khoảng 45 phút, được người Pháp đặt tên theo những cây chuối họ tìm thấy khi lên đây tìm không khí mát lành.">Bà Nà Hills is the complete opposite of Mỹ Sơn, and that's the point. Where one is ancient and quiet, this is theatrical and built for wonder. It sits at 1,487 metres in the forest about 45 minutes from Đà Nẵng, named by the French after the banana trees they found when they came up looking for cool mountain air.</p>
 
-      <p data-en="You get there by cable car, and the ride alone is worth it — the network holds four world records, and takes around 20 minutes climbing through forest and past a waterfall on the way up." data-vi="Bạn lên đó bằng cáp treo, và riêng chặng đi này đã đáng giá — hệ thống cáp treo ở đây giữ bốn kỷ lục thế giới, mất khoảng 20 phút băng qua rừng và ngang một thác nước trên đường lên.">You get there by cable car, and the ride alone is worth it — the network holds four world records, and takes around 20 minutes climbing through forest and past a waterfall on the way up.</p>
+      <p data-en="You get there by cable car, and the ride alone is worth it — the network holds four world records, and takes around 20 minutes climbing through forest and past a waterfall on the way up." data-fr="On y accède en téléphérique, et le trajet vaut à lui seul le détour — le réseau détient quatre records du monde et met une vingtaine de minutes à grimper à travers la forêt, en passant devant une cascade." data-vi="Bạn lên đó bằng cáp treo, và riêng chặng đi này đã đáng giá — hệ thống cáp treo ở đây giữ bốn kỷ lục thế giới, mất khoảng 20 phút băng qua rừng và ngang một thác nước trên đường lên.">You get there by cable car, and the ride alone is worth it — the network holds four world records, and takes around 20 minutes climbing through forest and past a waterfall on the way up.</p>
 
-      <p data-en="The Golden Bridge is what most people come for: 150 metres of walkway held up by two enormous stone hands, floating above the clouds on a clear day. But the park is much bigger than one bridge — a full French Village with a cathedral and cobbled squares, a Gothic castle, flower gardens, a funicular railway, an old French wine cellar carved into the mountain, and a fantasy amusement park. The mountain air is cool and the views over Đà Nẵng are enormous." data-vi="Cầu Vàng là thứ khiến phần lớn du khách tìm đến: 150 mét cầu đi bộ được nâng đỡ bởi hai bàn tay đá khổng lồ, như trôi bồng bềnh trên mây vào những ngày trời quang. Nhưng khu này rộng hơn một cây cầu rất nhiều — có cả một Làng Pháp với nhà thờ và quảng trường lát đá, lâu đài Gothic, vườn hoa, tàu hỏa leo núi, hầm rượu Pháp cổ khoét vào lòng núi, và một công viên giải trí. Không khí trên núi mát lành, tầm nhìn bao trọn Đà Nẵng rộng mênh mông.">The Golden Bridge is what most people come for: 150 metres of walkway held up by two enormous stone hands, floating above the clouds on a clear day. But the park is much bigger than one bridge — a full French Village with a cathedral and cobbled squares, a Gothic castle, flower gardens, a funicular railway, an old French wine cellar carved into the mountain, and a fantasy amusement park. The mountain air is cool and the views over Đà Nẵng are enormous.</p>
+      <p data-en="The Golden Bridge is what most people come for: 150 metres of walkway held up by two enormous stone hands, floating above the clouds on a clear day. But the park is much bigger than one bridge — a full French Village with a cathedral and cobbled squares, a Gothic castle, flower gardens, a funicular railway, an old French wine cellar carved into the mountain, and a fantasy amusement park. The mountain air is cool and the views over Đà Nẵng are enormous." data-fr="Le Pont d'Or est ce que la plupart des visiteurs viennent voir : 150 mètres de passerelle soutenue par deux mains de pierre colossales, flottant au-dessus des nuages les jours de beau temps. Mais le parc ne se résume pas à un pont — on y trouve un véritable village français avec cathédrale et places pavées, un château gothique, des jardins fleuris, un funiculaire, une ancienne cave à vin française creusée dans la montagne et un parc d'attractions féerique. L'air y est frais et les vues sur Đà Nẵng, immenses." data-vi="Cầu Vàng là thứ khiến phần lớn du khách tìm đến: 150 mét cầu đi bộ được nâng đỡ bởi hai bàn tay đá khổng lồ, như trôi bồng bềnh trên mây vào những ngày trời quang. Nhưng khu này rộng hơn một cây cầu rất nhiều — có cả một Làng Pháp với nhà thờ và quảng trường lát đá, lâu đài Gothic, vườn hoa, tàu hỏa leo núi, hầm rượu Pháp cổ khoét vào lòng núi, và một công viên giải trí. Không khí trên núi mát lành, tầm nhìn bao trọn Đà Nẵng rộng mênh mông.">The Golden Bridge is what most people come for: 150 metres of walkway held up by two enormous stone hands, floating above the clouds on a clear day. But the park is much bigger than one bridge — a full French Village with a cathedral and cobbled squares, a Gothic castle, flower gardens, a funicular railway, an old French wine cellar carved into the mountain, and a fantasy amusement park. The mountain air is cool and the views over Đà Nẵng are enormous.</p>
     </div>
 
     <div style="text-align:center;margin-top:44px;">
-      <a class="btn btn-primary" href="https://wa.me/84862627133?text=Hi!%20I%27d%20like%20to%20know%20more%20about%20the%20M%E1%BB%B9%20S%C6%A1n%20%2F%20B%C3%A0%20N%C3%A0%20Hills%20tour." target="_blank" rel="noopener" data-en="Ask About This Tour" data-vi="Hỏi Thêm Về Tour Này">Ask About This Tour</a>
+      <a class="btn btn-primary" href="https://wa.me/84862627133?text=Hi!%20I%27d%20like%20to%20know%20more%20about%20the%20M%E1%BB%B9%20S%C6%A1n%20%2F%20B%C3%A0%20N%C3%A0%20Hills%20tour." target="_blank" rel="noopener" data-en="Ask About This Tour" data-fr="En savoir plus sur ce tour" data-vi="Hỏi Thêm Về Tour Này">Ask About This Tour</a>
     </div>
   </div>
 </section>
@@ -1733,31 +1750,42 @@
 
 <footer>
   <div class="wrap">
-    <span data-en="Hội An By Night — a walking &amp; buggy pub crawl through Hội An after dark" data-vi="Hội An By Night — tour pub crawl đi bộ &amp; xe điện khắp Hội An về đêm">Hội An By Night — a walking &amp; buggy pub crawl through Hội An after dark</span>
-    <span class="footer-claim" data-en="Hội An's first pub crawl tour. The one and only." data-vi="Tour pub crawl đầu tiên tại Hội An. Độc nhất vô nhị.">Hội An's first pub crawl tour. The one and only.</span>
+    <span data-en="Hội An By Night — a walking &amp; buggy pub crawl through Hội An after dark" data-fr="Hội An By Night — une tournée des bars à pied &amp; en voiturette à travers Hội An après la tombée de la nuit" data-vi="Hội An By Night — tour pub crawl đi bộ &amp; xe điện khắp Hội An về đêm">Hội An By Night — a walking &amp; buggy pub crawl through Hội An after dark</span>
+    <span class="footer-claim" data-en="Hội An's first pub crawl tour. The one and only." data-fr="Le tout premier pub crawl de Hội An. L'unique, le vrai." data-vi="Tour pub crawl đầu tiên tại Hội An. Độc nhất vô nhị.">Hội An's first pub crawl tour. The one and only.</span>
     <span class="footer-email"><a href="mailto:hoiansidequest@gmail.com">hoiansidequest@gmail.com</a></span>
   </div>
 </footer>
 
 <script>
 (function(){
-  var current = 'en';
-  var toggle = document.getElementById('langToggle');
+  var LANGS = ['en','vi','fr'];
+  var buttons = document.querySelectorAll('#langSwitch .lang-flag');
 
   function applyLang(lang){
+    if (LANGS.indexOf(lang) === -1) lang = 'en';
     document.querySelectorAll('[data-en]').forEach(function(el){
-      el.textContent = el.getAttribute('data-' + lang);
+      var v = el.getAttribute('data-' + lang);
+      if (v !== null) el.textContent = v;
+    });
+    document.querySelectorAll('[data-en-ph]').forEach(function(el){
+      var v = el.getAttribute('data-' + lang + '-ph');
+      if (v !== null) el.setAttribute('placeholder', v);
     });
     document.documentElement.lang = lang;
-    toggle.textContent = (lang === 'en') ? 'VI' : 'EN';
-    current = lang;
+    buttons.forEach(function(b){
+      b.classList.toggle('active', b.getAttribute('data-lang') === lang);
+    });
+    try { localStorage.setItem('sq-lang', lang); } catch(e){}
+    if (window.renderDateChips) window.renderDateChips(lang);
   }
 
-  toggle.addEventListener('click', function(){
-    applyLang(current === 'en' ? 'vi' : 'en');
+  buttons.forEach(function(b){
+    b.addEventListener('click', function(){ applyLang(b.getAttribute('data-lang')); });
   });
 
-  applyLang('en');
+  var saved = null;
+  try { saved = localStorage.getItem('sq-lang'); } catch(e){}
+  applyLang(saved || 'en');
 })();
 </script>
 
