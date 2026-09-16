@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://brotherhoi.github.io/Hoi-an-lantern-crawl/</loc>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://brotherhoi.github.io/Hoi-an-lantern-crawl/og/lantern-crawl.jpg</image:loc>
+      <image:title>The Lantern Crawl pub crawl group in Hội An at night</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://brotherhoi.github.io/Hoi-an-lantern-crawl/food-tour.html</loc>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://brotherhoi.github.io/Hoi-an-lantern-crawl/og/food-tour.jpg</image:loc>
+      <image:title>Local Hội An dishes on the walking food tour</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://brotherhoi.github.io/Hoi-an-lantern-crawl/countryside.html</loc>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://brotherhoi.github.io/Hoi-an-lantern-crawl/og/countryside.jpg</image:loc>
+      <image:title>Cycling through the rice fields outside Hội An</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://brotherhoi.github.io/Hoi-an-lantern-crawl/myson-bana.html</loc>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://brotherhoi.github.io/Hoi-an-lantern-crawl/og/myson-bana.jpg</image:loc>
+      <image:title>The Golden Bridge at Bà Nà Hills</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://brotherhoi.github.io/Hoi-an-lantern-crawl/faq.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://brotherhoi.github.io/Hoi-an-lantern-crawl/og/lantern-crawl.jpg</image:loc>
+      <image:title>The Lantern Crawl in Hội An</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://brotherhoi.github.io/Hoi-an-lantern-crawl/gallery.html</loc>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://brotherhoi.github.io/Hoi-an-lantern-crawl/og/gallery.jpg</image:loc>
+      <image:title>Guests on a Hội An tour</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://brotherhoi.github.io/Hoi-an-lantern-crawl/video.html</loc>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://brotherhoi.github.io/Hoi-an-lantern-crawl/og/video.jpg</image:loc>
+      <image:title>A Hội An bar at night</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://brotherhoi.github.io/Hoi-an-lantern-crawl/blog.html</loc>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://brotherhoi.github.io/Hoi-an-lantern-crawl/og/lantern-crawl.jpg</image:loc>
+      <image:title>The Lantern Crawl in Hội An</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://brotherhoi.github.io/Hoi-an-lantern-crawl/blog-hoi-an-at-night.html</loc>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://brotherhoi.github.io/Hoi-an-lantern-crawl/og/night.jpg</image:loc>
+      <image:title>Late-night street food in Hội An</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://brotherhoi.github.io/Hoi-an-lantern-crawl/blog-hoi-an-food-guide.html</loc>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://brotherhoi.github.io/Hoi-an-lantern-crawl/og/food-tour.jpg</image:loc>
+      <image:title>Local Hội An dishes</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://brotherhoi.github.io/Hoi-an-lantern-crawl/blog-hoi-an-countryside.html</loc>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://brotherhoi.github.io/Hoi-an-lantern-crawl/og/countryside.jpg</image:loc>
+      <image:title>Rice fields outside Hội An</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://brotherhoi.github.io/Hoi-an-lantern-crawl/blog-myson-vs-bana.html</loc>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://brotherhoi.github.io/Hoi-an-lantern-crawl/og/myson-bana.jpg</image:loc>
+      <image:title>The Golden Bridge at Bà Nà Hills</image:title>
+    </image:image>
+  </url>
+</urlset>

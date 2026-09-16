@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://brotherhoi.github.io/Hoi-an-lantern-crawl/sitemap.xml

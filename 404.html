@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page Not Found — Sidequest Hội An</title>
+<meta name="description" content="This page took a wrong turn somewhere in the Old Town. Head back to the Lantern Crawl or browse the other Hội An tours.">
+<meta name="robots" content="noindex,follow">
+<meta name="theme-color" content="#1A1B33">
+<link rel="icon" type="image/png" href="/Hoi-an-lantern-crawl/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/Hoi-an-lantern-crawl/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --night: #1A1B33;
+    --paper: #F5EFE3;
+    --paper-dim: #C9C3B3;
+    --lantern: #E8A33D;
+    --lantern-red: #D9603B;
+    --river: #3E8E8C;
+  }
+
+  *{ box-sizing:border-box; margin:0; padding:0; }
+
+  body{
+    background:var(--night);
+    color:var(--paper);
+    font-family:'Be Vietnam Pro', sans-serif;
+    line-height:1.5;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:40px 24px;
+    overflow-x:hidden;
+  }
+
+  .glow{
+    position:fixed;
+    inset:0;
+    z-index:0;
+    pointer-events:none;
+    background:
+      radial-gradient(circle at 15% 20%, rgba(232,163,61,0.14), transparent 40%),
+      radial-gradient(circle at 85% 10%, rgba(217,96,59,0.10), transparent 35%),
+      radial-gradient(circle at 50% 90%, rgba(62,142,140,0.12), transparent 45%);
+  }
+
+  .wrap{
+    position:relative;
+    z-index:1;
+    max-width:560px;
+    text-align:center;
+  }
+
+  .logo{
+    width:96px;
+    height:96px;
+    border-radius:50%;
+    margin:0 auto 26px;
+    display:block;
+    opacity:0.9;
+  }
+
+  .code{
+    font-size:clamp(64px, 18vw, 120px);
+    font-weight:900;
+    line-height:0.9;
+    letter-spacing:-0.04em;
+    background:linear-gradient(135deg, var(--lantern), var(--lantern-red));
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+    margin-bottom:10px;
+  }
+
+  h1{
+    font-size:clamp(20px, 5vw, 27px);
+    font-weight:800;
+    margin-bottom:14px;
+  }
+
+  p{
+    color:var(--paper-dim);
+    font-size:16px;
+    margin-bottom:30px;
+  }
+
+  .links{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    justify-content:center;
+  }
+
+  .links a{
+    display:inline-block;
+    padding:13px 22px;
+    border-radius:999px;
+    text-decoration:none;
+    font-weight:700;
+    font-size:14px;
+    border:1px solid rgba(245,239,227,0.22);
+    color:var(--paper);
+    transition:border-color 0.2s, transform 0.2s;
+  }
+
+  .links a:hover{ border-color:var(--lantern); transform:translateY(-2px); }
+
+  .links a.primary{
+    background:linear-gradient(135deg, var(--lantern), var(--lantern-red));
+    border-color:transparent;
+    color:#12132A;
+  }
+
+  .lang-switch{
+    display:flex;
+    gap:8px;
+    justify-content:center;
+    margin-bottom:28px;
+  }
+
+  .lang-switch button{
+    background:none;
+    border:1px solid rgba(245,239,227,0.18);
+    border-radius:999px;
+    padding:5px 11px;
+    font-size:15px;
+    line-height:1;
+    cursor:pointer;
+    opacity:0.5;
+    transition:opacity 0.2s, border-color 0.2s;
+  }
+
+  .lang-switch button.active{ opacity:1; border-color:var(--lantern); }
+</style>
+</head>
+<body>
+
+<div class="glow"></div>
+
+<div class="wrap">
+  <img class="logo" src="/Hoi-an-lantern-crawl/apple-touch-icon.png" alt="Sidequest Hội An logo" width="96" height="96">
+
+  <div class="lang-switch" id="langSwitch">
+    <button type="button" class="lang-flag" data-lang="en" aria-label="English">🇬🇧</button>
+    <button type="button" class="lang-flag" data-lang="vi" aria-label="Tiếng Việt">🇻🇳</button>
+    <button type="button" class="lang-flag" data-lang="fr" aria-label="Français">🇫🇷</button>
+  </div>
+
+  <div class="code">404</div>
+
+  <h1 data-en="This page took a wrong turn" data-fr="Cette page s'est perdue en route" data-vi="Trang này đi lạc mất rồi">This page took a wrong turn</h1>
+
+  <p data-en="Somewhere between the Old Town and the beach, this link got lost. Let's get you back on the route." data-fr="Quelque part entre la vieille ville et la plage, ce lien s'est égaré. Reprenons la route." data-vi="Đâu đó giữa phố cổ và bãi biển, đường link này đã đi lạc. Quay lại lộ trình nhé.">Somewhere between the Old Town and the beach, this link got lost. Let's get you back on the route.</p>
+
+  <div class="links">
+    <a class="primary" href="/Hoi-an-lantern-crawl/" data-en="The Lantern Crawl" data-fr="Le Lantern Crawl" data-vi="Lantern Crawl">The Lantern Crawl</a>
+    <a href="/Hoi-an-lantern-crawl/food-tour.html" data-en="Food Tour" data-fr="Tour gastronomique" data-vi="Food Tour">Food Tour</a>
+    <a href="/Hoi-an-lantern-crawl/countryside.html" data-en="Countryside Tour" data-fr="Tour à la campagne" data-vi="Tour miền quê">Countryside Tour</a>
+    <a href="/Hoi-an-lantern-crawl/blog.html" data-en="Blog" data-fr="Blog" data-vi="Blog">Blog</a>
+  </div>
+</div>
+
+<script>
+(function(){
+  var LANGS = ['en','vi','fr'];
+  var buttons = document.querySelectorAll('#langSwitch .lang-flag');
+
+  function applyLang(lang){
+    if (LANGS.indexOf(lang) === -1) lang = 'en';
+    document.querySelectorAll('[data-en]').forEach(function(el){
+      var v = el.getAttribute('data-' + lang);
+      if (v !== null) el.textContent = v;
+    });
+    document.documentElement.lang = lang;
+    buttons.forEach(function(b){
+      b.classList.toggle('active', b.getAttribute('data-lang') === lang);
+    });
+    try { localStorage.setItem('sq-lang', lang); } catch(e){}
+  }
+
+  buttons.forEach(function(b){
+    b.addEventListener('click', function(){ applyLang(b.getAttribute('data-lang')); });
+  });
+
+  var saved = null;
+  try { saved = localStorage.getItem('sq-lang'); } catch(e){}
+  applyLang(saved || 'en');
+})();
+</script>
+
+</body>
+</html>
