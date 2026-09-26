@@ -396,6 +396,7 @@
 
   .stop-img{
     width:auto;
+    height:auto;
     max-width:100%;
     max-height:460px;
     border-radius:14px;
@@ -421,6 +422,12 @@
   @media (max-width:640px){
     .animal-photo-grid{ grid-template-columns:1fr; }
     .animal-photo-grid .stop-img{ height:220px; }
+    /* Narrow the timeline gutter so photos get the width on phones */
+    .stop{ grid-template-columns:40px 1fr; gap:14px; }
+    .lantern-dot{ width:40px; height:40px; font-size:14px; box-shadow:0 0 0 4px var(--night), 0 0 12px 2px rgba(232,163,61,0.25); }
+    .trail-line{ left:19px; }
+    .stop-card{ padding:20px 16px; }
+    .stop-img{ width:100%; max-height:380px; object-fit:cover; }
   }
 
   .stop-tag{
