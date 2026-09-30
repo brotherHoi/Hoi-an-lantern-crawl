@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hội An Food Tour — Poster | Sidequest Hội An</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#12132A; --night:#1A1B33; --night-2:#22244A;
+    --paper:#F5EFE3; --paper-dim:#C9C3B3;
+    --lantern:#E8A33D; --lantern-red:#D9603B; --river:#3E8E8C;
+  }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html,body{ background:#3a3a3a; }
+  body{
+    font-family:'Be Vietnam Pro', sans-serif;
+    display:flex; flex-direction:column; align-items:center;
+    gap:24px; padding:24px 0;
+  }
+  .print-toolbar{
+    color:#eee; font-size:13px; text-align:center;
+  }
+  .print-toolbar button{
+    font-family:inherit; font-weight:700; font-size:14px;
+    background:var(--lantern); color:var(--ink); border:none;
+    padding:10px 22px; border-radius:999px; cursor:pointer; margin-top:8px;
+  }
+
+  .page{
+    width:210mm; height:297mm;
+    background:var(--night);
+    color:var(--paper);
+    position:relative;
+    overflow:hidden;
+    box-shadow:0 10px 40px rgba(0,0,0,0.5);
+  }
+
+  .glow{
+    position:absolute; inset:0; z-index:0; pointer-events:none;
+    background:
+      radial-gradient(circle at 15% 10%, rgba(232,163,61,0.22), transparent 42%),
+      radial-gradient(circle at 90% 20%, rgba(217,96,59,0.16), transparent 40%),
+      radial-gradient(circle at 30% 95%, rgba(62,142,140,0.18), transparent 45%);
+  }
+
+  .hero{
+    position:relative; z-index:1;
+    height:130mm;
+    background-image:linear-gradient(180deg, rgba(18,19,42,0.05) 0%, rgba(18,19,42,0.35) 60%, var(--night) 100%), url('../img/a-spread-of-hoi-an-dishes.jpg');
+    background-size:cover;
+    background-position:center 42%;
+    display:flex; flex-direction:column; justify-content:flex-end;
+    padding:14mm 14mm 10mm;
+  }
+
+  .brand-row{
+    position:absolute; top:10mm; left:14mm; right:14mm;
+    display:flex; align-items:center; gap:10px; z-index:2;
+  }
+  .brand-row img{ width:34px; height:34px; border-radius:50%; }
+  .brand-row .name{ font-weight:800; font-size:13px; letter-spacing:0.02em; }
+  .brand-row .name span{ display:block; font-size:9px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:var(--paper-dim); }
+
+  .eyebrow{
+    font-size:13px; letter-spacing:0.24em; text-transform:uppercase;
+    color:var(--lantern); font-weight:700; margin-bottom:10px;
+  }
+
+  h1{
+    font-weight:900; font-size:52px; line-height:0.98; letter-spacing:-0.01em;
+    text-shadow:0 4px 24px rgba(0,0,0,0.5);
+  }
+  h1 .accent{ color:var(--lantern); font-style:italic; font-weight:800; }
+
+  .sub{ margin-top:10px; font-size:15px; color:var(--paper-dim); max-width:150mm; font-weight:400; }
+
+  .meta-strip{
+    position:relative; z-index:1;
+    display:flex; justify-content:space-around;
+    padding:9mm 10mm;
+    background:var(--night-2);
+    border-top:1px solid rgba(245,239,227,0.1);
+    border-bottom:1px solid rgba(245,239,227,0.1);
+  }
+  .meta-item{ text-align:center; }
+  .meta-item .num{ display:block; font-size:24px; font-weight:800; color:var(--lantern); }
+  .meta-item .label{ font-size:10px; text-transform:uppercase; letter-spacing:0.08em; color:var(--paper-dim); font-weight:600; }
+
+  .menu-section{
+    position:relative; z-index:1;
+    padding:10mm 14mm 0;
+  }
+  .menu-kicker{
+    font-size:12px; letter-spacing:0.2em; text-transform:uppercase; color:var(--river); font-weight:700; margin-bottom:8px;
+  }
+  .dish-grid{
+    display:grid; grid-template-columns:1fr 1fr; gap:6mm 8mm;
+  }
+  .dish{
+    display:flex; align-items:baseline; gap:8px;
+  }
+  .dish .n{ color:var(--lantern); font-weight:800; font-size:14px; flex-shrink:0; width:16px; }
+  .dish .t{ font-weight:700; font-size:13.5px; line-height:1.3; }
+  .dish .t small{ display:block; font-weight:400; font-size:10.5px; color:var(--paper-dim); margin-top:1px; }
+
+  .cta-band{
+    position:absolute; left:0; right:0; bottom:0; z-index:1;
+    display:flex; align-items:center; gap:12mm;
+    padding:9mm 14mm;
+    background:linear-gradient(180deg, rgba(217,96,59,0.16), rgba(217,96,59,0.05));
+    border-top:1px solid rgba(217,96,59,0.35);
+  }
+  .qr-box{
+    background:var(--paper); padding:6px; border-radius:10px; flex-shrink:0;
+    box-shadow:0 6px 20px -6px rgba(0,0,0,0.5);
+  }
+  .qr-box img{ display:block; width:32mm; height:32mm; }
+  .cta-text .cta-label{
+    font-size:11px; text-transform:uppercase; letter-spacing:0.14em; color:var(--lantern); font-weight:700; margin-bottom:4px;
+  }
+  .cta-text .cta-title{ font-size:20px; font-weight:800; line-height:1.25; }
+  .cta-text .cta-contact{ margin-top:6px; font-size:13px; color:var(--paper-dim); font-weight:600; }
+  .cta-text .cta-contact b{ color:var(--paper); font-weight:800; }
+
+  @media print{
+    html,body{ background:#fff; margin:0; padding:0; }
+    .print-toolbar{ display:none; }
+    .page{ box-shadow:none; margin:0; }
+    @page{ size:A4 portrait; margin:0; }
+  }
+</style>
+</head>
+<body>
+
+<div class="print-toolbar">
+  Hội An Food Tour — print poster (A4 portrait). Use your browser's Print → Save as PDF for the cleanest export.
+  <br><button onclick="window.print()">🖨️ Print / Save as PDF</button>
+</div>
+
+<div class="page">
+  <div class="glow"></div>
+
+  <div class="hero">
+    <div class="brand-row">
+      <img src="../img/sidequest-hoi-an-logo.png" alt="Sidequest Hội An logo">
+      <div class="name">Sidequest Hội An<span>Local-Guided Tours</span></div>
+    </div>
+    <div class="eyebrow">● Walking Food Tour</div>
+    <h1>Hội An<br><span class="accent">Food Tour</span></h1>
+    <p class="sub">7 dishes, 3km through the Old Town's back alleys and street stalls — with a local guide who knows every vendor by name.</p>
+  </div>
+
+  <div class="meta-strip">
+    <div class="meta-item"><span class="num">7</span><span class="label">Dishes</span></div>
+    <div class="meta-item"><span class="num">800K₫</span><span class="label">Per Guest (≈€30)</span></div>
+    <div class="meta-item"><span class="num">5PM</span><span class="label">Start Time</span></div>
+    <div class="meta-item"><span class="num">3km</span><span class="label">On Foot</span></div>
+  </div>
+
+  <div class="menu-section">
+    <div class="menu-kicker">The Menu — 7 Stops</div>
+    <div class="dish-grid">
+      <div class="dish"><span class="n">01</span><span class="t">Há Cảo<small>White Rose Dumplings</small></span></div>
+      <div class="dish"><span class="n">02</span><span class="t">Bánh Bèo<small>Water Fern Cake</small></span></div>
+      <div class="dish"><span class="n">03</span><span class="t">Bánh Bột Lọc<small>Tapioca Dumplings</small></span></div>
+      <div class="dish"><span class="n">04</span><span class="t">Xí Mà Phú<small>Black Sesame Soup</small></span></div>
+      <div class="dish"><span class="n">05</span><span class="t">Cao Lầu<small>Hội An's Signature Noodle</small></span></div>
+      <div class="dish"><span class="n">06</span><span class="t">Bánh Căn<small>Mini Charcoal Rice Cakes</small></span></div>
+      <div class="dish"><span class="n">07</span><span class="t">Tropical Smoothie<small>The Sweet Finish</small></span></div>
+    </div>
+  </div>
+
+  <div class="cta-band">
+    <div class="qr-box"><img src="qr-food-tour.png" alt="Scan to book on WhatsApp"></div>
+    <div class="cta-text">
+      <div class="cta-label">Scan to book on WhatsApp</div>
+      <div class="cta-title">Runs daily — message us for tonight's spot</div>
+      <div class="cta-contact">📞 <b>+84 862 627 133</b> &nbsp;·&nbsp; IG <b>@minhhuy1610</b></div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
