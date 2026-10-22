@@ -1814,6 +1814,41 @@
     .navbar{ padding:12px 14px; gap:10px; }
     .navbar-burger{ width:38px; height:38px; }
   }
+
+  /* ---------- FREE BEER PERK (food tour) ---------- */
+  .price-list li.price-perk{
+    align-self:flex-start;
+    margin:6px 0;
+    padding:10px 18px 10px 46px;
+    border-radius:999px;
+    font-size:15px;
+    font-weight:800;
+    color:var(--ink);
+    background:linear-gradient(135deg, #F7C04A, var(--lantern));
+    box-shadow:0 0 0 6px rgba(232,163,61,0.14), 0 10px 26px -8px rgba(232,163,61,0.75);
+  }
+
+  .price-list li.price-perk::before{
+    content:"🍺";
+    left:16px;
+    top:50%;
+    font-size:20px;
+    line-height:1;
+    transform:translateY(-50%) rotate(-12deg);
+    transform-origin:bottom center;
+    animation:perk-cheers 2.4s ease-in-out infinite;
+  }
+
+  @keyframes perk-cheers{
+    0%, 70%, 100%{ transform:translateY(-50%) rotate(-12deg); }
+    80%{ transform:translateY(-60%) rotate(8deg); }
+    90%{ transform:translateY(-50%) rotate(-4deg); }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .price-list li.price-perk::before{ animation:none; }
+  }
+
 </style>
 <!-- JSONLD:start -->
 <script type="application/ld+json">
@@ -1964,6 +1999,7 @@
         <ul class="price-list">
           <li data-en="7 local dishes, tasted along the walk" data-fr="7 plats locaux, dégustés tout au long de la balade" data-vi="7 món ăn địa phương, nếm dọc đường đi">7 local dishes, tasted along the walk</li>
           <li data-en="Drinks included at each stop" data-fr="Boissons incluses à chaque arrêt" data-vi="Đã bao gồm nước uống ở mỗi điểm dừng">Drinks included at each stop</li>
+          <li class="price-perk" data-en="1 free ice-cold beer (or a soft drink)" data-fr="1 bière bien fraîche offerte (ou un soft)" data-vi="1 ly bia lạnh miễn phí (hoặc nước ngọt)">1 free ice-cold beer (or a soft drink)</li>
           <li data-en="Thin poncho provided if it rains" data-fr="Poncho fourni en cas de pluie" data-vi="Có sẵn áo mưa mỏng nếu trời mưa">Thin poncho provided if it rains</li>
           <li data-en="Walking tour, roughly 3km through the Old Town" data-fr="Tour à pied, environ 3 km dans la vieille ville" data-vi="Tour đi bộ, khoảng 3km quanh phố cổ">Walking tour, roughly 3km through the Old Town</li>
         </ul>

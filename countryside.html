@@ -1832,6 +1832,30 @@
     .navbar{ padding:12px 14px; gap:10px; }
     .navbar-burger{ width:38px; height:38px; }
   }
+
+  /* ---------- EXPERIENCE GRID (cycling tour, not a fixed order) ---------- */
+  .experience-grid{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:22px;
+  }
+
+  .experience-grid .stop-card--wide{ grid-column:1 / -1; }
+
+  .experience-grid .stop-title{ margin-top:0; }
+
+  .experience-grid .stop-card:not(.stop-card--wide) > .stop-img{
+    width:100%;
+    height:240px;
+    object-fit:cover;
+  }
+
+  .experience-grid .animal-photo-grid .stop-img{ height:200px; }
+
+  @media (max-width:720px){
+    .experience-grid{ grid-template-columns:1fr; }
+  }
+
 </style>
 <!-- JSONLD:start -->
 <script type="application/ld+json">
@@ -1984,63 +2008,47 @@
 <section>
   <div class="wrap">
     <div class="section-head">
-      <div class="kicker" data-en="The Journey" data-fr="Le parcours" data-vi="Hành Trình">The Journey</div>
-      <h2 data-en="Five stops along the way" data-fr="Cinq étapes en chemin" data-vi="Năm điểm dừng trên hành trình">Five stops along the way</h2>
+      <div class="kicker" data-en="The Experience" data-fr="L'expérience" data-vi="Trải Nghiệm">The Experience</div>
+      <h2 data-en="What you'll experience on the ride" data-fr="Ce que vous vivrez pendant la balade" data-vi="Những gì bạn sẽ trải nghiệm trong tour">What you'll experience on the ride</h2>
     </div>
 
-    <div class="trail">
-      <div class="trail-line"></div>
+    <div class="experience-grid">
 
-      <div class="stop">
-        <div class="lantern-dot" style="--i:0">01</div>
-        <div class="stop-card">
-          <div class="stop-title" data-en="Out of the Old Town, Onto Two Wheels" data-fr="Hors de la vieille ville, à deux roues" data-vi="Rời Phố Cổ, Lên Yên Xe Đạp">Out of the Old Town, Onto Two Wheels</div>
-          <img class="stop-img" src="img/group-cycling-through-rice-fields-near-hoi.jpg" alt="Group cycling through the fields near Hội An" width="700" height="525" decoding="async" loading="lazy">
-          <p class="stop-desc" data-en="Flat, easy roads for about 12–15km (exact distance depends on your hotel), winding through rice paddies, river villages — and the odd herd of cattle crossing your path." data-fr="Des routes plates et faciles sur environ 12–15 km (la distance exacte dépend de votre hôtel), à travers rizières et villages au bord de l'eau — et parfois un troupeau qui traverse la route." data-vi="Quãng đường khoảng 12–15km, đường bằng phẳng dễ đi (tuỳ khách sạn), băng qua ruộng lúa, làng ven sông và thỉnh thoảng gặp cả đàn bò băng ngang đường.">Flat, easy roads for about 12–15km (exact distance depends on your hotel), winding through rice paddies, river villages — and the odd herd of cattle crossing your path.</p>
-          <span class="stop-tag tag-included" data-en="Included in the tour" data-fr="Inclus dans le tour" data-vi="Đã bao gồm trong tour">Included in the tour</span>
-        </div>
+      <div class="stop-card stop-card--wide">
+        <div class="stop-title" data-en="Out of the Old Town, Onto Two Wheels" data-fr="Hors de la vieille ville, à deux roues" data-vi="Rời Phố Cổ, Lên Yên Xe Đạp">Out of the Old Town, Onto Two Wheels</div>
+        <img class="stop-img" src="img/group-cycling-through-rice-fields-near-hoi.jpg" alt="Group cycling through the fields near Hội An" width="700" height="525" decoding="async" loading="lazy">
+        <p class="stop-desc" data-en="Flat, easy roads for about 12–15km (exact distance depends on your hotel), winding through rice paddies, river villages — and the odd herd of cattle crossing your path." data-fr="Des routes plates et faciles sur environ 12–15 km (la distance exacte dépend de votre hôtel), à travers rizières et villages au bord de l'eau — et parfois un troupeau qui traverse la route." data-vi="Quãng đường khoảng 12–15km, đường bằng phẳng dễ đi (tuỳ khách sạn), băng qua ruộng lúa, làng ven sông và thỉnh thoảng gặp cả đàn bò băng ngang đường.">Flat, easy roads for about 12–15km (exact distance depends on your hotel), winding through rice paddies, river villages — and the odd herd of cattle crossing your path.</p>
+        <span class="stop-tag tag-included" data-en="Included in the tour" data-fr="Inclus dans le tour" data-vi="Đã bao gồm trong tour">Included in the tour</span>
       </div>
 
-      <div class="stop">
-        <div class="lantern-dot" style="--i:1">02</div>
-        <div class="stop-card">
-          <div class="stop-title" data-en="Lantern-Making Workshop" data-fr="Atelier de fabrication de lanternes" data-vi="Trải Nghiệm Làm Đèn Lồng">Lantern-Making Workshop</div>
-          <img class="stop-img" src="img/making-a-silk-lantern-with-local-artisans.jpg" alt="Making a silk lantern with local artisans" width="1500" height="1028" decoding="async" loading="lazy">
-          <p class="stop-desc" data-en="Sit down with local artisans and make your own silk lantern from scratch — yours to take home as a one-of-a-kind souvenir." data-fr="Installez-vous avec des artisans locaux et fabriquez votre propre lanterne en soie de A à Z — un souvenir unique à rapporter chez vous." data-vi="Ngồi cùng nghệ nhân địa phương và tự tay làm một chiếc đèn lồng lụa của riêng mình — món quà lưu niệm độc nhất mang về.">Sit down with local artisans and make your own silk lantern from scratch — yours to take home as a one-of-a-kind souvenir.</p>
-          <span class="stop-tag tag-own" data-en="Hands-on experience" data-fr="Expérience participative" data-vi="Trải nghiệm tự tay làm">Hands-on experience</span>
-        </div>
+      <div class="stop-card">
+        <div class="stop-title" data-en="Lantern-Making Workshop" data-fr="Atelier de fabrication de lanternes" data-vi="Trải Nghiệm Làm Đèn Lồng">Lantern-Making Workshop</div>
+        <img class="stop-img" src="img/making-a-silk-lantern-with-local-artisans.jpg" alt="Making a silk lantern with local artisans" width="1500" height="1028" decoding="async" loading="lazy">
+        <p class="stop-desc" data-en="Sit down with local artisans and make your own silk lantern from scratch — yours to take home as a one-of-a-kind souvenir." data-fr="Installez-vous avec des artisans locaux et fabriquez votre propre lanterne en soie de A à Z — un souvenir unique à rapporter chez vous." data-vi="Ngồi cùng nghệ nhân địa phương và tự tay làm một chiếc đèn lồng lụa của riêng mình — món quà lưu niệm độc nhất mang về.">Sit down with local artisans and make your own silk lantern from scratch — yours to take home as a one-of-a-kind souvenir.</p>
+        <span class="stop-tag tag-own" data-en="Hands-on experience" data-fr="Expérience participative" data-vi="Trải nghiệm tự tay làm">Hands-on experience</span>
       </div>
 
-      <div class="stop">
-        <div class="lantern-dot" style="--i:2">03</div>
-        <div class="stop-card">
-          <div class="stop-title" data-en="Traditional Rice Wine Tasting" data-fr="Dégustation d'alcool de riz traditionnel" data-vi="Nếm Thử Rượu Gạo Truyền Thống">Traditional Rice Wine Tasting</div>
-          <img class="stop-img" src="img/watching-a-local-family-distill-traditiona.jpg" alt="Watching a local family distill traditional rice wine" width="630" height="685" decoding="async" loading="lazy">
-          <p class="stop-desc" data-en="Step into a local home distillery to see (and taste) how Hội An's rice wine is made the old-fashioned way, straight from the still." data-fr="Entrez dans une distillerie familiale pour voir (et goûter) comment l'alcool de riz de Hội An se fabrique à l'ancienne, tout droit sorti de l'alambic." data-vi="Ghé thăm một lò nấu rượu gia đình để tận mắt xem (và nếm thử) cách người dân Hội An nấu rượu gạo theo cách truyền thống.">Step into a local home distillery to see (and taste) how Hội An's rice wine is made the old-fashioned way, straight from the still.</p>
-        </div>
+      <div class="stop-card">
+        <div class="stop-title" data-en="Traditional Rice Wine Tasting" data-fr="Dégustation d'alcool de riz traditionnel" data-vi="Nếm Thử Rượu Gạo Truyền Thống">Traditional Rice Wine Tasting</div>
+        <img class="stop-img" src="img/watching-a-local-family-distill-traditiona.jpg" alt="Watching a local family distill traditional rice wine" width="630" height="685" decoding="async" loading="lazy">
+        <p class="stop-desc" data-en="Step into a local home distillery to see (and taste) how Hội An's rice wine is made the old-fashioned way, straight from the still." data-fr="Entrez dans une distillerie familiale pour voir (et goûter) comment l'alcool de riz de Hội An se fabrique à l'ancienne, tout droit sorti de l'alambic." data-vi="Ghé thăm một lò nấu rượu gia đình để tận mắt xem (và nếm thử) cách người dân Hội An nấu rượu gạo theo cách truyền thống.">Step into a local home distillery to see (and taste) how Hội An's rice wine is made the old-fashioned way, straight from the still.</p>
       </div>
 
-      <div class="stop">
-        <div class="lantern-dot" style="--i:3">04</div>
-        <div class="stop-card">
-          <div class="stop-title" data-en="Say Hello to the Locals" data-fr="Rencontrez les habitants du coin" data-vi="Chào Hỏi Những Người Bạn Địa Phương">Say Hello to the Locals</div>
-          <div class="animal-photo-grid">
-            <img class="stop-img" src="img/feeding-the-ducks-at-duck-stop-hoi-an-at-s.jpg" alt="Feeding the ducks at Duck Stop, Hội An, at sunset" width="1086" height="1448" decoding="async" loading="lazy">
-            <img class="stop-img" src="img/a-local-water-buffalo-along-the-rice-field.jpg" alt="A local water buffalo along the rice fields — photo op only, no riding" width="1319" height="878" decoding="async" loading="lazy">
-            <img class="stop-img" src="img/a-herd-of-cows-crossing-the-road-during-th.jpg" alt="A herd of cows crossing the road during the ride" width="904" height="1600" decoding="async" loading="lazy">
-          </div>
-          <p class="stop-desc" data-en="Feed a flock of friendly ducks at golden hour at Duck Stop, and along the way you might spot — and snap photos with — water buffalo grazing the rice fields or a herd of cows crossing the road (photo ops only — we don't offer animal riding for guests)." data-fr="Nourrissez une joyeuse bande de canards au coucher du soleil au Duck Stop, et en chemin vous croiserez peut-être — et pourrez photographier — des buffles qui paissent dans les rizières ou un troupeau de vaches traversant la route (photos uniquement — nous ne proposons pas de balade à dos d'animal)." data-vi="Cho đàn vịt ăn lúc hoàng hôn tại Duck Stop, và trên đường đi bạn có thể bắt gặp — và chụp ảnh cùng — đàn trâu đang gặm cỏ trên ruộng lúa hoặc đàn bò băng qua đường (chỉ chụp ảnh — tụi mình không tổ chức hoạt động cưỡi các con vật cho khách).">Feed a flock of friendly ducks at golden hour at Duck Stop, and along the way you might spot — and snap photos with — water buffalo grazing the rice fields or a herd of cows crossing the road (photo ops only — we don't offer animal riding for guests).</p>
+      <div class="stop-card">
+        <div class="stop-title" data-en="Say Hello to the Locals" data-fr="Rencontrez les habitants du coin" data-vi="Chào Hỏi Những Người Bạn Địa Phương">Say Hello to the Locals</div>
+        <div class="animal-photo-grid">
+          <img class="stop-img" src="img/feeding-the-ducks-at-duck-stop-hoi-an-at-s.jpg" alt="Feeding the ducks at Duck Stop, Hội An, at sunset" width="1086" height="1448" decoding="async" loading="lazy">
+          <img class="stop-img" src="img/a-local-water-buffalo-along-the-rice-field.jpg" alt="A local water buffalo along the rice fields — photo op only, no riding" width="1319" height="878" decoding="async" loading="lazy">
+          <img class="stop-img" src="img/a-herd-of-cows-crossing-the-road-during-th.jpg" alt="A herd of cows crossing the road during the ride" width="904" height="1600" decoding="async" loading="lazy">
         </div>
+        <p class="stop-desc" data-en="Feed a flock of friendly ducks at golden hour at Duck Stop, and along the way you might spot — and snap photos with — water buffalo grazing the rice fields or a herd of cows crossing the road (photo ops only — we don't offer animal riding for guests)." data-fr="Nourrissez une joyeuse bande de canards au coucher du soleil au Duck Stop, et en chemin vous croiserez peut-être — et pourrez photographier — des buffles qui paissent dans les rizières ou un troupeau de vaches traversant la route (photos uniquement — nous ne proposons pas de balade à dos d'animal)." data-vi="Cho đàn vịt ăn lúc hoàng hôn tại Duck Stop, và trên đường đi bạn có thể bắt gặp — và chụp ảnh cùng — đàn trâu đang gặm cỏ trên ruộng lúa hoặc đàn bò băng qua đường (chỉ chụp ảnh — tụi mình không tổ chức hoạt động cưỡi các con vật cho khách).">Feed a flock of friendly ducks at golden hour at Duck Stop, and along the way you might spot — and snap photos with — water buffalo grazing the rice fields or a herd of cows crossing the road (photo ops only — we don't offer animal riding for guests).</p>
       </div>
 
-      <div class="stop">
-        <div class="lantern-dot" style="--i:4">05</div>
-        <div class="stop-card highlight">
-          <div class="stop-title" data-en="Coconut Basket Boat" data-fr="Bateau-panier traditionnel" data-vi="Thuyền Thúng Dừa">Coconut Basket Boat</div>
-          <img class="stop-img" src="img/coconut-basket-boat-ride.jpg" alt="Traditional coconut basket boat ride through the palm forest" width="700" height="933" decoding="async" loading="lazy">
-          <p class="stop-desc" data-en="Finish the ride with a traditional round basket boat, paddled through a swaying coconut palm forest." data-fr="Terminez la balade à bord d'un bateau-panier rond traditionnel, pagayé au cœur d'une cocoteraie ondoyante." data-vi="Kết thúc hành trình bằng một chuyến thuyền thúng truyền thống, chèo giữa rừng dừa nước rì rào.">Finish the ride with a traditional round basket boat, paddled through a swaying coconut palm forest.</p>
-          <span class="stop-tag tag-highlight" data-en="The perfect way to end the ride" data-fr="La touche finale parfaite" data-vi="Cách kết thúc hoàn hảo cho chuyến đi">The perfect way to end the ride</span>
-        </div>
+      <div class="stop-card highlight">
+        <div class="stop-title" data-en="Coconut Basket Boat" data-fr="Bateau-panier traditionnel" data-vi="Thuyền Thúng Dừa">Coconut Basket Boat</div>
+        <img class="stop-img" src="img/coconut-basket-boat-ride.jpg" alt="Traditional coconut basket boat ride through the palm forest" width="700" height="933" decoding="async" loading="lazy">
+        <p class="stop-desc" data-en="Finish the ride with a traditional round basket boat, paddled through a swaying coconut palm forest." data-fr="Terminez la balade à bord d'un bateau-panier rond traditionnel, pagayé au cœur d'une cocoteraie ondoyante." data-vi="Kết thúc hành trình bằng một chuyến thuyền thúng truyền thống, chèo giữa rừng dừa nước rì rào.">Finish the ride with a traditional round basket boat, paddled through a swaying coconut palm forest.</p>
+        <span class="stop-tag tag-highlight" data-en="The perfect way to end the ride" data-fr="La touche finale parfaite" data-vi="Cách kết thúc hoàn hảo cho chuyến đi">The perfect way to end the ride</span>
       </div>
     </div>
 
