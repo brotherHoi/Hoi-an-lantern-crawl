@@ -97,7 +97,7 @@
   .navbar img{
     width:52px;
     height:52px;
-    border-radius:50%;
+    object-fit:contain;
     flex-shrink:0;
     display:block;
   }
@@ -734,6 +734,67 @@
     grid-template-columns:repeat(3, 1fr);
     grid-auto-rows:110px;
     gap:14px;
+  }
+
+  /* ---------- CUSTOM / PRIVATE OPTIONS ---------- */
+  .tour-options{ display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:16px; }
+  .tour-option{
+    display:flex; align-items:center; gap:14px; padding:16px 18px; border-radius:16px;
+    text-decoration:none; color:inherit;
+    background:rgba(245,239,227,0.05); border:1px solid rgba(232,163,61,0.3);
+    transition:border-color .2s, transform .2s;
+  }
+  .tour-option:hover{ border-color:#E8A33D; transform:translateY(-2px); }
+  .tour-option-ico{ font-size:26px; flex:none; }
+  .tour-option b{ display:block; font-size:16px; color:#F6C46A; margin-bottom:3px; }
+  .tour-option small{ display:block; font-size:13px; line-height:1.45; opacity:0.75; }
+  .tour-option-go{ margin-left:auto; color:#F6C46A; font-size:20px; flex:none; }
+  @media (max-width:640px){ .tour-options{ grid-template-columns:1fr; } }
+
+  /* ---------- DISH CAROUSEL (cut-out dishes under the page title) ---------- */
+  .dish-carousel{ position:relative; max-width:960px; margin:34px auto 0; padding:0 40px; }
+  .dish-viewport{ overflow:hidden; }
+  .dish-track{
+    display:flex; transition:transform .7s cubic-bezier(.65,0,.35,1);
+    touch-action:pan-y;
+  }
+  .dish-page{
+    flex:0 0 100%; display:flex; justify-content:center; align-items:flex-end;
+    padding:10px 0 6px; transition:opacity .7s ease;
+  }
+  .dish-page:not(.on){ opacity:0.15; }
+  .dish-slide{
+    flex:0 0 25%; margin:0; text-align:center; padding:0 8px;
+    display:flex; flex-direction:column; align-items:center; justify-content:flex-end;
+  }
+  .dish-slide img{
+    width:100%; max-width:210px; height:140px; object-fit:contain;
+    filter:drop-shadow(0 12px 14px rgba(0,0,0,0.45));
+    animation:dish-float 4s ease-in-out infinite;
+  }
+  .dish-slide:nth-child(2n) img{ animation-delay:-2s; }
+  .dish-slide figcaption{ margin-top:10px; display:flex; flex-direction:column; gap:2px; }
+  .dish-slide figcaption b{ font-size:14px; letter-spacing:0.06em; text-transform:uppercase; color:#F6C46A; }
+  .dish-slide figcaption span{ font-size:13px; opacity:0.7; }
+  .dish-arrow{
+    position:absolute; top:42%; transform:translateY(-50%); z-index:2;
+    width:42px; height:42px; border-radius:50%; border:1px solid rgba(232,163,61,0.5);
+    background:rgba(26,27,51,0.85); color:#F6C46A; font-size:26px; line-height:38px; cursor:pointer;
+  }
+  .dish-arrow:hover{ background:#E8A33D; color:#12132A; }
+  .dish-arrow:disabled{ opacity:0.25; cursor:default; }
+  .dish-arrow.prev{ left:0; } .dish-arrow.next{ right:0; }
+  .dish-dots{ display:flex; justify-content:center; gap:7px; margin-top:12px; }
+  .dish-dots i{ width:8px; height:8px; border-radius:4px; background:rgba(245,239,227,0.25); transition:width .4s ease, background .4s ease; }
+  .dish-dots i.on{ width:26px; background:#E8A33D; }
+  @keyframes dish-float{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-7px); } }
+  @media (prefers-reduced-motion:reduce){ .dish-slide img{ animation:none; } }
+  @media (max-width:640px){
+    .dish-carousel{ padding:0 30px; }
+    .dish-page{ flex-wrap:wrap; row-gap:14px; }
+    .dish-slide{ flex-basis:50%; }
+    .dish-slide img{ height:105px; }
+    .dish-arrow{ width:36px; height:36px; font-size:22px; line-height:32px; }
   }
 
   .gallery-tile{
@@ -1903,7 +1964,7 @@
         }
       ],
       "sameAs": [
-        "https://ig.me/m/minhhuy1610",
+        "https://www.instagram.com/hoiansidequest/",
         "https://wa.me/84862627133"
       ]
     },
@@ -1959,7 +2020,7 @@
 <div class="glow"></div>
 <div class="navbar">
   <a class="navbar-brand" href="index.html">
-    <img src="img/sidequest-hoi-an-logo.png" alt="Sidequest Hội An logo" width="200" height="200" decoding="async">
+    <img src="img/logo-sidequest-cream.png" alt="Sidequest Hội An logo" width="474" height="480" decoding="async">
     <div class="navbar-name">Sidequest Hội An<span>The Lantern Crawl</span></div>
   </a>
   <button class="navbar-burger" id="navBurger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navMenu"><span></span></button>
@@ -1969,7 +2030,7 @@
     <a href="blog.html" data-en="Blog" data-fr="Blog" data-vi="Blog" class="">Blog</a>
     <a href="gallery.html" data-en="Gallery" data-fr="Galerie" data-vi="Gallery" class="">Gallery</a>
     <a href="faq.html" data-en="FAQ" data-fr="FAQ" data-vi="Hỏi đáp" class="">FAQ</a>
-    <a href="index.html#tour-khac" data-en="Other Tours" data-fr="Autres tours" data-vi="Tour khác">Other Tours</a>
+    <a href="other-tours.html" data-en="Other Tours" data-fr="Autres tours" data-vi="Tour khác">Other Tours</a>
     <a href="index.html#lien-he" data-en="Contact" data-fr="Contact" data-vi="Liên hệ">Contact</a>
   </nav>
   <div class="lang-switch" id="langSwitch"><button class="lang-flag" type="button" data-lang="en" title="English" aria-label="English"><svg viewBox="0 0 60 40" aria-hidden="true"><rect width="60" height="40" fill="#012169"/><path d="M0,0 60,40 M60,0 0,40" stroke="#ffffff" stroke-width="8"/><path d="M0,0 60,40 M60,0 0,40" stroke="#C8102E" stroke-width="4"/><path d="M30,0 V40 M0,20 H60" stroke="#ffffff" stroke-width="13"/><path d="M30,0 V40 M0,20 H60" stroke="#C8102E" stroke-width="8"/></svg></button><button class="lang-flag" type="button" data-lang="vi" title="Tiếng Việt" aria-label="Tiếng Việt"><svg viewBox="0 0 60 40" aria-hidden="true"><rect width="60" height="40" fill="#DA251D"/><path d="M30,9 L32.59,16.44 L40.46,16.6 L34.18,21.36 L36.47,28.9 L30,24.4 L23.53,28.9 L25.82,21.36 L19.54,16.6 L27.41,16.44 Z" fill="#FFFF00"/></svg></button><button class="lang-flag" type="button" data-lang="fr" title="Français" aria-label="Français"><svg viewBox="0 0 60 40" aria-hidden="true"><rect width="20" height="40" fill="#002395"/><rect x="20" width="20" height="40" fill="#F5F5F5"/><rect x="40" width="20" height="40" fill="#ED2939"/></svg></button></div>
@@ -1982,7 +2043,34 @@
   <div class="wrap page-head">
     <div class="kicker" data-en="Hội An Food Tour" data-fr="Food Tour à Hội An" data-vi="Food Tour Hội An">Hội An Food Tour</div>
     <h1 data-en="Taste Your Way Through Hội An" data-fr="Goûtez Hội An, plat après plat" data-vi="Nếm trọn Hội An qua từng món">Taste Your Way Through Hội An</h1>
-    <p data-en="A walking food tour through the Old Town — 7 dishes, one afternoon, no rush." data-fr="Un food tour à pied dans la vieille ville — 7 plats, un après-midi, sans se presser." data-vi="Tour ẩm thực đi bộ qua phố cổ — 7 món ăn, một buổi chiều, không vội vã.">A walking food tour through the Old Town — 7 dishes, one afternoon, no rush.</p>
+    <p data-en="A walking food tour through the Old Town — 7 dishes, one evening, no rush." data-fr="Un food tour à pied dans la vieille ville — 7 plats, une soirée, sans se presser." data-vi="Tour ẩm thực đi bộ qua phố cổ — 7 món ăn, một buổi tối, không vội vã.">A walking food tour through the Old Town — 7 dishes, one evening, no rush.</p>
+    <div class="dish-carousel" aria-label="The 7 dishes on the tour">
+      <button class="dish-arrow prev" type="button" aria-label="Previous dishes">&#8249;</button>
+      <div class="dish-viewport">
+      <div class="dish-track" id="dishTrack">
+        <div class="dish-page">
+          <figure class="dish-slide"><img src="img/cutout-white-rose.webp" alt="Há Cảo" width="417" height="417" decoding="async" loading="lazy">
+          <figcaption><b>Há Cảo</b><span data-en="White Rose Dumplings" data-fr="Raviolis « rose blanche »" data-vi="Bánh Bao Bánh Vạc">White Rose Dumplings</span></figcaption></figure>
+          <figure class="dish-slide"><img src="img/cutout-banh-beo.webp" alt="Bánh Bèo" width="151" height="111" decoding="async" loading="lazy">
+          <figcaption><b>Bánh Bèo</b><span data-en="Water Fern Cake" data-fr="Gâteaux de riz vapeur" data-vi="Bánh bèo chén">Water Fern Cake</span></figcaption></figure>
+          <figure class="dish-slide"><img src="img/cutout-banh-bot-loc.webp" alt="Bánh Bột Lọc" width="440" height="310" decoding="async" loading="lazy">
+          <figcaption><b>Bánh Bột Lọc</b><span data-en="Tapioca Dumplings" data-fr="Raviolis de tapioca" data-vi="Bánh bột lọc">Tapioca Dumplings</span></figcaption></figure>
+          <figure class="dish-slide"><img src="img/cutout-xi-ma.webp" alt="Xí Mà Phú" width="428" height="377" decoding="async" loading="lazy">
+          <figcaption><b>Xí Mà Phú</b><span data-en="Black Sesame Soup" data-fr="Soupe de sésame noir" data-vi="Chè xí mà">Black Sesame Soup</span></figcaption></figure>
+        </div>
+        <div class="dish-page">
+          <figure class="dish-slide"><img src="img/cutout-cao-lau.webp" alt="Cao Lầu" width="329" height="287" decoding="async" loading="lazy">
+          <figcaption><b>Cao Lầu</b><span data-en="Hội An's signature noodles" data-fr="Les nouilles signature de Hội An" data-vi="Mì đặc sản Hội An">Hội An's signature noodles</span></figcaption></figure>
+          <figure class="dish-slide"><img src="img/cutout-banh-can.webp" alt="Bánh Căn" width="420" height="214" decoding="async" loading="lazy">
+          <figcaption><b>Bánh Căn</b><span data-en="Mini Rice Pancakes" data-fr="Mini crêpes de riz" data-vi="Bánh căn khuôn đất">Mini Rice Pancakes</span></figcaption></figure>
+          <figure class="dish-slide"><img src="img/cutout-sinh-to.webp" alt="Sinh Tố" width="412" height="371" decoding="async" loading="lazy">
+          <figcaption><b>Sinh Tố</b><span data-en="Tropical Fruit Smoothie" data-fr="Smoothie aux fruits tropicaux" data-vi="Sinh tố trái cây">Tropical Fruit Smoothie</span></figcaption></figure>
+        </div>
+      </div>
+      </div>
+      <button class="dish-arrow next" type="button" aria-label="Next dishes">&#8250;</button>
+    </div>
+    <div class="dish-dots" id="dishDots" aria-hidden="true"></div>
   </div>
 </section>
 
@@ -1998,12 +2086,31 @@
       <div>
         <ul class="price-list">
           <li data-en="7 local dishes, tasted along the walk" data-fr="7 plats locaux, dégustés tout au long de la balade" data-vi="7 món ăn địa phương, nếm dọc đường đi">7 local dishes, tasted along the walk</li>
-          <li data-en="Drinks included at each stop" data-fr="Boissons incluses à chaque arrêt" data-vi="Đã bao gồm nước uống ở mỗi điểm dừng">Drinks included at each stop</li>
+          <li data-en="Mineral water included" data-fr="Eau minérale incluse" data-vi="Đã bao gồm nước suối">Mineral water included</li>
           <li class="price-perk" data-en="1 free ice-cold beer (or a soft drink)" data-fr="1 bière bien fraîche offerte (ou un soft)" data-vi="1 ly bia lạnh miễn phí (hoặc nước ngọt)">1 free ice-cold beer (or a soft drink)</li>
           <li data-en="Thin poncho provided if it rains" data-fr="Poncho fourni en cas de pluie" data-vi="Có sẵn áo mưa mỏng nếu trời mưa">Thin poncho provided if it rains</li>
           <li data-en="Walking tour, roughly 3km through the Old Town" data-fr="Tour à pied, environ 3 km dans la vieille ville" data-vi="Tour đi bộ, khoảng 3km quanh phố cổ">Walking tour, roughly 3km through the Old Town</li>
         </ul>
       </div>
+    </div>
+
+    <div class="tour-options">
+      <a class="tour-option" href="https://wa.me/84862627133" target="_blank" rel="noopener">
+        <span class="tour-option-ico" aria-hidden="true">🔒</span>
+        <span>
+          <b data-en="Private tour, your menu" data-fr="Tour privé, votre menu" data-vi="Tour riêng, menu theo ý bạn">Private tour, your menu</b>
+          <small data-en="Just your group, at your own pace — and you pick the dishes. Message us to set it up." data-fr="Rien que votre groupe, à votre rythme — et c'est vous qui choisissez les plats. Écrivez-nous pour l'organiser." data-vi="Chỉ nhóm của bạn, đi theo nhịp của bạn — và bạn tự chọn món. Nhắn tin để tụi mình sắp xếp.">Just your group, at your own pace — and you pick the dishes. Message us to set it up.</small>
+        </span>
+        <span class="tour-option-go" aria-hidden="true">→</span>
+      </a>
+      <a class="tour-option" href="https://wa.me/84862627133" target="_blank" rel="noopener">
+        <span class="tour-option-ico" aria-hidden="true">🥬</span>
+        <span>
+          <b data-en="Vegetarian? No problem" data-fr="Végétarien ? Aucun souci" data-vi="Ăn chay? Không thành vấn đề">Vegetarian? No problem</b>
+          <small data-en="Just let us know when you book and we'll take care of it." data-fr="Prévenez-nous simplement à la réservation, on s'en occupe." data-vi="Chỉ cần báo trước khi đặt tour, tụi mình sẽ lo phần còn lại.">Just let us know when you book and we'll take care of it.</small>
+        </span>
+        <span class="tour-option-go" aria-hidden="true">→</span>
+      </a>
     </div>
   </div>
 </section>
@@ -2082,7 +2189,7 @@
   <a class="float-btn whatsapp" href="https://wa.me/84862627133" target="_blank" rel="noopener" aria-label="WhatsApp">
     <svg viewBox="0 0 24 24" width="30" height="30" fill="#ffffff" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.39 1.26 4.82L2 22l5.44-1.43a9.87 9.87 0 0 0 4.6 1.17h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 1.67c2.19 0 4.25.85 5.8 2.4a8.18 8.18 0 0 1 2.4 5.83c0 4.53-3.7 8.23-8.24 8.23a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.23.85.86-3.15-.2-.32a8.15 8.15 0 0 1-1.25-4.35c0-4.54 3.7-8.23 8.35-8.23Zm-3.5 4.6c-.14 0-.36.05-.55.27-.19.21-.72.7-.72 1.71 0 1 .74 1.98.84 2.11.1.14 1.44 2.31 3.55 3.15 1.76.7 2.11.56 2.5.53.38-.04 1.24-.5 1.42-1 .17-.48.17-.9.12-1-.05-.09-.19-.14-.4-.25-.21-.1-1.24-.61-1.43-.68-.19-.07-.33-.1-.47.1-.14.21-.54.68-.66.82-.12.14-.24.16-.45.05-.21-.1-.88-.32-1.68-1.03a6.28 6.28 0 0 1-1.16-1.44c-.12-.21-.01-.32.09-.43.1-.1.21-.24.32-.36.1-.12.14-.21.21-.35.07-.14.03-.26-.02-.36-.05-.1-.47-1.13-.65-1.55-.17-.4-.34-.35-.47-.36h-.4Z"/></svg>
   </a>
-  <a class="float-btn instagram" href="https://ig.me/m/minhhuy1610" target="_blank" rel="noopener" aria-label="Instagram">
+  <a class="float-btn instagram" href="https://ig.me/m/hoiansidequest" target="_blank" rel="noopener" aria-label="Instagram">
     <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#ffffff" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="6"/><circle cx="12" cy="12" r="5"/><circle cx="17.3" cy="6.7" r="1.2" fill="#ffffff" stroke="none"/></svg>
   </a>
 </div>
@@ -2090,8 +2197,8 @@
 <footer>
   <div class="wrap">
     <span data-en="Hội An By Night — a walking pub crawl through Hội An after dark" data-fr="Hội An By Night — une tournée des bars à pied à travers Hội An après la tombée de la nuit" data-vi="Hội An By Night — tour pub crawl đi bộ khắp Hội An về đêm">Hội An By Night — a walking pub crawl through Hội An after dark</span>
-    <span class="footer-claim" data-en="Hội An's first pub crawl tour. The one and only." data-fr="Le tout premier pub crawl de Hội An. L'unique, le vrai." data-vi="Tour pub crawl đầu tiên tại Hội An. Độc nhất vô nhị.">Hội An's first pub crawl tour. The one and only.</span>
-    <span class="footer-nav"><a href="index.html" data-en="Home" data-fr="Accueil" data-vi="Trang chủ">Home</a><a href="faq.html" data-en="FAQ" data-fr="FAQ" data-vi="Hỏi đáp">FAQ</a><a href="blog.html" data-en="Blog" data-fr="Blog" data-vi="Blog">Blog</a><a href="gallery.html" data-en="Gallery" data-fr="Galerie" data-vi="Thư viện ảnh">Gallery</a><a href="video.html" data-en="Video" data-fr="Vidéo" data-vi="Video">Video</a><a href="index.html#tour-khac" data-en="Other Tours" data-fr="Autres tours" data-vi="Tour khác">Other Tours</a></span>
+    <span class="footer-claim" data-en="Hội An's first homegrown pub crawl — cozy bars, lantern-lit streets, new friends." data-fr="Le premier pub crawl 100 % local de Hội An — bars cosy, ruelles aux lanternes, nouveaux amis." data-vi="Pub crawl “cây nhà lá vườn” đầu tiên tại Hội An — quán nhỏ ấm cúng, phố đèn lồng, bạn mới.">Hội An's first homegrown pub crawl — cozy bars, lantern-lit streets, new friends.</span>
+    <span class="footer-nav"><a href="index.html" data-en="Home" data-fr="Accueil" data-vi="Trang chủ">Home</a><a href="faq.html" data-en="FAQ" data-fr="FAQ" data-vi="Hỏi đáp">FAQ</a><a href="blog.html" data-en="Blog" data-fr="Blog" data-vi="Blog">Blog</a><a href="gallery.html" data-en="Gallery" data-fr="Galerie" data-vi="Thư viện ảnh">Gallery</a><a href="video.html" data-en="Video" data-fr="Vidéo" data-vi="Video">Video</a><a href="other-tours.html" data-en="Other Tours" data-fr="Autres tours" data-vi="Tour khác">Other Tours</a></span>
   <span class="footer-email"><a href="mailto:hoiansidequest@gmail.com">hoiansidequest@gmail.com</a></span>
   </div>
 </footer>
@@ -2160,5 +2267,39 @@
   });
 })();
 </script>
+<script>
+// dish carousel: two pages (4 dishes, then 3), one slide between them
+(function(){
+  var track = document.getElementById('dishTrack');
+  if (!track) return;
+  var pages = track.children, dots = document.getElementById('dishDots'), cur = 0;
+  var prev = track.closest('.dish-carousel').querySelector('.prev'),
+      next = track.closest('.dish-carousel').querySelector('.next');
+  for (var i = 0; i < pages.length; i++) dots.appendChild(document.createElement('i'));
+  function show(i){
+    cur = Math.max(0, Math.min(pages.length - 1, i));
+    track.style.transform = 'translateX(' + (-100 * cur) + '%)';
+    for (var k = 0; k < pages.length; k++){
+      pages[k].classList.toggle('on', k === cur);
+      dots.children[k].classList.toggle('on', k === cur);
+    }
+    prev.disabled = cur === 0;
+    next.disabled = cur === pages.length - 1;
+  }
+  prev.addEventListener('click', function(){ show(cur - 1); });
+  next.addEventListener('click', function(){ show(cur + 1); });
+  var x0 = null;
+  track.addEventListener('touchstart', function(e){ x0 = e.touches[0].clientX; }, { passive:true });
+  track.addEventListener('touchend', function(e){
+    if (x0 === null) return;
+    var dx = e.changedTouches[0].clientX - x0;
+    if (Math.abs(dx) > 40) show(cur + (dx < 0 ? 1 : -1));
+    x0 = null;
+  });
+  show(0);
+})();
+</script>
+<script src="cursor-buddy.js" defer></script>
+<script src="book-bar.js" defer></script>
 </body>
 </html>
