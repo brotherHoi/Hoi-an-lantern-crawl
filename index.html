@@ -1915,6 +1915,24 @@
     background:#E8A33D; color:#12132A; font-weight:800;
   }
   .review-cta{ text-align:center; margin-top:26px; }
+  /* ---------- WHAT MAKES THE CUT ---------- */
+  .cut-grid{ display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+  .cut-col{ padding:26px 26px 20px; border-radius:20px; border:1px solid rgba(245,239,227,0.1); }
+  .cut-in{ background:linear-gradient(160deg, rgba(232,163,61,0.14), rgba(232,163,61,0.03)); border-color:rgba(232,163,61,0.35); }
+  .cut-out{ background:rgba(245,239,227,0.03); }
+  .cut-head{ font-size:13px; font-weight:800; letter-spacing:0.14em; text-transform:uppercase; margin-bottom:16px; }
+  .cut-in .cut-head{ color:#F6C46A; }
+  .cut-out .cut-head{ opacity:0.6; }
+  .cut-col ul{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:14px; }
+  .cut-col li{ display:flex; gap:12px; align-items:flex-start; font-size:16px; line-height:1.45; }
+  .cut-mark{
+    flex:none; width:26px; height:26px; border-radius:50%; display:grid; place-items:center;
+    font-size:13px; font-weight:800; margin-top:-1px;
+  }
+  .cut-in .cut-mark{ background:#E8A33D; color:#12132A; }
+  .cut-out .cut-mark{ background:rgba(245,239,227,0.1); color:rgba(245,239,227,0.6); }
+  .cut-out li span:last-child{ opacity:0.65; text-decoration:line-through; text-decoration-color:rgba(255,77,77,0.6); }
+  @media (max-width:720px){ .cut-grid{ grid-template-columns:1fr; } .cut-col{ padding:22px 20px 16px; } }
 </style>
 <!-- JSONLD:start -->
 <script type="application/ld+json">
@@ -2158,6 +2176,36 @@
   </div>
 </section>
 
+<section id="the-cut">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker" data-en="The Sidequest Difference" data-fr="La différence Sidequest" data-vi="Điểm khác của Sidequest">The Sidequest Difference</div>
+      <h2 data-en="Not a hostel party. A homegrown night out." data-fr="Pas une soirée d'auberge. Une vraie nuit à la locale." data-vi="Không phải party hostel. Một đêm chơi kiểu người nhà.">Not a hostel party. A homegrown night out.</h2>
+    </div>
+
+    <div class="cut-grid">
+      <div class="cut-col cut-in">
+        <div class="cut-head" data-en="What makes the cut" data-fr="Ce qu'on garde" data-vi="Có gì trong tour">What makes the cut</div>
+        <ul>
+          <li><span class="cut-mark" aria-hidden="true">✓</span><span data-en="A local who actually lives in Hội An, with you all night" data-fr="Un local qui vit vraiment à Hội An, avec vous toute la soirée" data-vi="Một người địa phương thật sự sống ở Hội An, đi cùng bạn cả tối">A local who actually lives in Hội An, with you all night</span></li>
+          <li><span class="cut-mark" aria-hidden="true">✓</span><span data-en="Cozy Old Town bars, all a short walk apart" data-fr="Des bars cosy de la vieille ville, à quelques pas les uns des autres" data-vi="Những quán nhỏ ấm cúng trong phố cổ, đi bộ vài bước là tới">Cozy Old Town bars, all a short walk apart</span></li>
+          <li><span class="cut-mark" aria-hidden="true">✓</span><span data-en="Street food straight off the coals to kick things off" data-fr="De la street food tout juste sortie des braises pour commencer" data-vi="Mở màn bằng đồ nướng than vỉa hè nóng hổi">Street food straight off the coals to kick things off</span></li>
+          <li><span class="cut-mark" aria-hidden="true">✓</span><span data-en="Drinking games that turn strangers into friends" data-fr="Des jeux à boire qui transforment des inconnus en amis" data-vi="Trò chơi uống biến người lạ thành bạn">Drinking games that turn strangers into friends</span></li>
+        </ul>
+      </div>
+      <div class="cut-col cut-out">
+        <div class="cut-head" data-en="What we leave out" data-fr="Ce qu'on laisse de côté" data-vi="Không có gì">What we leave out</div>
+        <ul>
+          <li><span class="cut-mark" aria-hidden="true">✕</span><span data-en="Party buses and giant crowds" data-fr="Les bus de fête et les foules immenses" data-vi="Xe bus party và đám đông hàng trăm người">Party buses and giant crowds</span></li>
+          <li><span class="cut-mark" aria-hidden="true">✕</span><span data-en="Long rides between stops" data-fr="Les longs trajets entre les arrêts" data-vi="Ngồi xe lâu giữa các điểm">Long rides between stops</span></li>
+          <li><span class="cut-mark" aria-hidden="true">✕</span><span data-en="Riding a motorbike after a few drinks" data-fr="Conduire un scooter après quelques verres" data-vi="Chạy xe máy sau khi đã uống">Riding a motorbike after a few drinks</span></li>
+          <li><span class="cut-mark" aria-hidden="true">✕</span><span data-en="Overcharged taxis at the end of the night" data-fr="Les taxis hors de prix en fin de soirée" data-vi="Taxi chặt chém lúc tan cuộc">Overcharged taxis at the end of the night</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="lich-trinh">
   <div class="wrap">
     <div class="section-head">
@@ -2184,7 +2232,8 @@
         <div class="stop-card">
           <div class="stop-time"><span data-en="Second Stop" data-fr="Deuxième arrêt" data-vi="Điểm dừng 2">Second Stop</span> <span class="heat-meter">🔥 <span class="heat-label" data-en="Warming up" data-fr="Ça s'échauffe" data-vi="Bắt đầu nóng">Warming up</span></span></div>
           <div class="stop-title" data-en="Game On — Old Town Bar" data-fr="Place au jeu — bar de la vieille ville" data-vi="Vào game — Bar phố cổ">Game On — Old Town Bar</div>
-          <p class="stop-desc" data-en="A welcome shot, an ice-cold draft beer and the night's first drinking game — lose, and the Loser Cup is all yours. The group's warmed up before heading deeper into the Old Town." data-fr="Un shot de bienvenue, une bière pression bien glacée et le premier jeu à boire de la soirée — perdez, et la Loser Cup est pour vous. Le groupe est chaud avant de s'enfoncer dans la vieille ville." data-vi="Một shot chào mừng, một ly bia tươi mát lạnh và trò chơi uống đầu tiên của đêm — thua là Loser Cup thuộc về bạn. Cả nhóm nóng máy trước khi đi sâu vào phố cổ.">A welcome shot, an ice-cold draft beer and the night's first drinking game — lose, and the Loser Cup is all yours. The group's warmed up before heading deeper into the Old Town.</p>
+          <p class="stop-desc" data-en="A welcome shot, an ice-cold draft beer and the night's first drinking game. Win it and you walk away with a little prize. Lose it? Let's just say we've planned a surprise for that too." data-fr="Un shot de bienvenue, une bière pression bien glacée et le premier jeu à boire de la soirée. Gagnez, et vous repartez avec un petit cadeau. Perdez ? Disons qu'on vous a aussi réservé une surprise." data-vi="Một shot chào mừng, một ly bia tươi mát lạnh và trò chơi uống đầu tiên của đêm. Thắng là có ngay một món quà nhỏ mang về. Còn thua à? Tụi mình cũng đã chuẩn bị sẵn một bất ngờ.">A welcome shot, an ice-cold draft beer and the night's first drinking game. Win it and you walk away with a little prize. Lose it? Let's just say we've planned a surprise for that too.</p>
+          <span class="stop-tag tag-highlight" data-en="🎁 Win a little prize" data-fr="🎁 Un petit cadeau à gagner" data-vi="🎁 Thắng có quà">🎁 Win a little prize</span>
           <span class="stop-tag tag-included" data-en="Included in the tour" data-fr="Inclus dans le tour" data-vi="Đã bao gồm trong tour">Included in the tour</span>
         </div>
       </div>
