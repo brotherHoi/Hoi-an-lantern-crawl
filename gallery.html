@@ -729,21 +729,19 @@
   }
 
   /* ---------- GALLERY ---------- */
+  /* masonry: photos keep their own shape and stack in columns, so the grid never leaves gaps */
   .gallery-grid{
-    display:grid;
-    grid-template-columns:repeat(3, 1fr);
-    grid-auto-rows:110px;
-    grid-auto-flow:dense;
-    gap:14px;
+    column-count:3;
+    column-gap:14px;
   }
 
   .gallery-tile{
     border-radius:14px;
     position:relative;
     overflow:hidden;
-    display:flex;
-    align-items:flex-end;
-    padding:12px;
+    display:block;
+    margin:0 0 14px;
+    break-inside:avoid;
     background:
       radial-gradient(circle at 30% 20%, rgba(232,163,61,0.22), transparent 60%),
       linear-gradient(160deg, var(--night-2), var(--ink));
@@ -751,11 +749,9 @@
   }
 
   .gallery-tile img{
-    position:absolute;
-    inset:0;
+    display:block;
     width:100%;
-    height:100%;
-    object-fit:cover;
+    height:auto;
   }
 
   .gallery-tile span{
@@ -765,8 +761,6 @@
     letter-spacing:0.02em;
   }
 
-  .gallery-tile.tall{ grid-row:span 2; }
-  .gallery-tile.wide{ grid-column:span 2; }
 
   /* ---------- OTHER TOURS ---------- */
   .tours-grid{
@@ -924,7 +918,7 @@
 
   @media (max-width:760px){
     .blog-grid, .tours-grid{ grid-template-columns:1fr; }
-    .gallery-grid{ grid-template-columns:repeat(2, 1fr); }
+    .gallery-grid{ column-count:2; column-gap:10px; }
     .contact-grid{ grid-template-columns:1fr; }
   }
 
@@ -1895,12 +1889,14 @@
       <div class="gallery-tile tall"><img src="img/two-guests-laughing-under-festoon-lights-o.jpg" alt="Two guests laughing under festoon lights on the pub crawl" width="1050" height="1400" decoding="async" loading="lazy"></div>
       <div class="gallery-tile tall"><img src="img/dj-set-and-dancing-at-a-hoi-an-bar-during.jpg" alt="DJ set and dancing at a Hội An bar during the pub crawl" width="1050" height="1400" decoding="async" loading="lazy"></div>
       <div class="gallery-tile tall wide"><img src="img/street-side-beers-on-little-red-stools.jpg" alt="Street-side beers on little red stools in Hội An" width="1050" height="1400" decoding="async" loading="lazy"></div>
+      <div class="gallery-tile wide"><img src="img/hoi-an-market-lit-up-at-night.jpg" alt="Hội An Market lit up at night on the crawl route" width="1400" height="1050" decoding="async" loading="lazy"></div>
+      <div class="gallery-tile tall"><img src="img/pouring-a-shot-under-a-lantern.jpg" alt="Pouring a shot straight from the bottle under a silk lantern" width="1050" height="1400" decoding="async" loading="lazy"></div>
       <div class="gallery-tile tall"><img src="img/welcome-shots-at-a-garden-bar-in-hoi-an.jpg" alt="Welcome shots at a garden bar in Hội An" width="787" height="1400" decoding="async" loading="lazy"></div>
       <div class="gallery-tile tall"><img src="img/guests-downing-shots-on-the-crawl.jpg" alt="Guests downing shots on the pub crawl" width="787" height="1400" decoding="async" loading="lazy"></div>
       <div class="gallery-tile tall"><img src="img/cocktail-with-a-view-over-the-old-town-street.jpg" alt="Cocktail with a view over a lantern-lit Old Town street" width="787" height="1400" decoding="async" loading="lazy"></div>
       <div class="gallery-tile tall"><img src="img/espresso-martinis-at-a-hoi-an-bar.jpg" alt="Espresso martinis at a Hội An bar" width="1050" height="1400" decoding="async" loading="lazy"></div>
       <div class="gallery-tile tall"><img src="img/guests-chilling-at-a-lantern-lit-beer-garden.jpg" alt="Guests chilling at a lantern-lit beer garden" width="1050" height="1400" decoding="async" loading="lazy"></div>
-      <div class="gallery-tile tall wide"><img src="img/crawl-crew-partying-under-the-lanterns.jpg" alt="Pub crawl crew partying under the lanterns" width="1050" height="1400" decoding="async" loading="lazy"></div>
+      <div class="gallery-tile tall"><img src="img/crawl-crew-partying-under-the-lanterns.jpg" alt="Pub crawl crew partying under the lanterns" width="1050" height="1400" decoding="async" loading="lazy"></div>
     </div>
   </div>
 </section>
@@ -2037,7 +2033,7 @@
   });
 })();
 </script>
-<script src="cursor-buddy.js" defer></script>
+<script src="cursor-buddy.js?v=2" defer></script>
 <script src="book-bar.js" defer></script>
 </body>
 </html>

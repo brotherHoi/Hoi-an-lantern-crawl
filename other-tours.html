@@ -783,6 +783,12 @@
     flex-direction:column;
   }
 
+  /* the whole card is the link: the "See details" link stretches over the card */
+  .tour-card{ position:relative; transition:transform .25s ease, border-color .25s ease, box-shadow .25s ease; }
+  .tour-card-link::after{ content:""; position:absolute; inset:0; z-index:1; }
+  .tour-card:hover{ transform:translateY(-4px); border-color:rgba(232,163,61,0.45); box-shadow:0 14px 30px rgba(0,0,0,0.35); }
+  .tour-card:focus-within{ border-color:rgba(232,163,61,0.7); }
+
   .tour-card-img{
     height:140px;
     overflow:hidden;
@@ -1960,7 +1966,7 @@
   });
 })();
 </script>
-<script src="cursor-buddy.js" defer></script>
+<script src="cursor-buddy.js?v=2" defer></script>
 <script src="book-bar.js" defer></script>
 </body>
 </html>
