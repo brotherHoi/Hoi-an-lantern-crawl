@@ -1887,6 +1887,18 @@
   .review-avatar-g{ background:#E8A33D; color:#1B1C34; }
   .review-cta{ display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
   .review-cta{ text-align:center; margin-top:26px; }
+  /* ---------- big screens: scale the whole page up so it doesn't look tiny in the middle ---------- */
+  :root{ --z:1; }
+  @media (min-width:1600px){ :root{ --z:1.05; } }
+  @media (min-width:1700px){ :root{ --z:1.12; } }
+  @media (min-width:2200px){ :root{ --z:1.22; } }
+  html{ zoom:var(--z); }
+  @media (min-width:1200px){ .wrap{ max-width:1060px; } }
+  /* section titles: centred, and wide enough that short titles stay on one line */
+  .section-head{ text-align:center; }
+  .section-head h2{ max-width:860px; margin-left:auto; margin-right:auto; text-wrap:balance; }
+  .section-head p{ margin-left:auto; margin-right:auto; }
+  .section-head::before{ margin-left:auto; margin-right:auto; background-position:center top; }
 </style>
 <!-- JSONLD:start -->
 <script type="application/ld+json">
